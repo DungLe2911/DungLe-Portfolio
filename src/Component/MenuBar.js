@@ -1,5 +1,5 @@
 import "../Style/MenuBar.css"
-import ProfileImg from "../Picture/profile.jpg"
+// import ProfileImg from "../Picture/profile.jpg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as Fa from '@fortawesome/free-brands-svg-icons'
 
@@ -25,7 +25,7 @@ export default function MenuBar(){
     return(
     <div className="MenuBarContainer">
         <div className="Profile">
-            <img className="ProfilePic" src={ProfileImg} alt="ProfilePic"></img>
+            {/* <img className="ProfilePic" src={ProfileImg} alt="ProfilePic"></img> */}
             <h1 className="TextName">
                 <a href="index.html">Dung Hoang Le</a>
             </h1>

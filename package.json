@@ -1,7 +1,7 @@
 {
   "name": "dungle-portfolio",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -12,10 +12,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "homepage":"https://dungle2911.github.io/DungLe-Portfolio/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [

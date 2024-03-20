@@ -1,10 +1,17 @@
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom/cjs/react-router-dom';
 import MenuBar from './Component/MenuBar';
 import './Style/App.css';
+import PageContainer from './Pages/PageContainer';
 
 function App() {
   return (
     <div className="App">
-      <MenuBar/>
+      <Router>
+        <MenuBar/>
+        <Switch>
+          <Route exact path="/" component={PageContainer}/>
+        </Switch>
+      </Router>
     </div>
   );
 }

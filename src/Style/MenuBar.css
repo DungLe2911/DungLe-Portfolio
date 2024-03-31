@@ -75,9 +75,8 @@ a{
     max-width: 95%;
     height: fit-content;
     margin: 5px;
-    border: 2px solid white ;
-    padding-top:10px;
-    padding-bottom:15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     border-radius: 15px;
     color: grey;
     display: flex;
@@ -90,6 +89,7 @@ a{
 .NavbarItem:hover{
     background-color: green;
     color: white;
-    padding-top:20px;
-    padding-bottom:20px;
+    padding-top:30px;
+    padding-bottom: 30px;
+    border: 2px solid white ;
 }

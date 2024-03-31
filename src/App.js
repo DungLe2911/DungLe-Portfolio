@@ -9,7 +9,7 @@ function App() {
       <Router>
         <MenuBar/>
         <Switch>
-          <Route exact path="/" component={PageContainer}/>
+          <Route exact path="/DungLe-Portfolio" component={PageContainer}/>
         </Switch>
       </Router>
     </div>

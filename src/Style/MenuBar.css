@@ -63,3 +63,33 @@ a{
 .SocialTag:hover{
     background-color: #149ddd;
 }
+
+.Nav-Menu{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.NavbarItem{
+    max-width: 95%;
+    height: fit-content;
+    margin: 5px;
+    border: 2px solid white ;
+    padding-top:10px;
+    padding-bottom:15px;
+    border-radius: 15px;
+    color: grey;
+    display: flex;
+    flex-direction: row;
+    padding-left: 15px;
+    /* Added transition property - helps smooth out on hover */
+    transition: background-color 0.3s ease, padding 0.3s ease, color 0.3s ease;
+}
+
+.NavbarItem:hover{
+    background-color: green;
+    color: white;
+    padding-top:20px;
+    padding-bottom:20px;
+}

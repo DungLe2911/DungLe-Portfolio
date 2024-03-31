@@ -1,30 +1,50 @@
 import "../Style/MenuBar.css"
 import ProfileImg from "../Picture/profile.JPG"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as Fa from '@fortawesome/free-brands-svg-icons'
-// import { Link } from "react-router-dom/cjs/react-router-dom";
+import * as icobrands from '@fortawesome/free-brands-svg-icons'
+import * as icoReg from '@fortawesome/free-regular-svg-icons'
+import * as icoSolid from '@fortawesome/free-solid-svg-icons'
+import { Link } from "react-router-dom/cjs/react-router-dom";
+// import { icon } from "@fortawesome/fontawesome-svg-core";
 
 export default function MenuBar(){
     const socialMedia = [
         {
-            icon:Fa.faGoogle,
+            icon:icobrands.faGoogle,
             path:"google.com" 
         },
         {
-            icon:Fa.faYoutube,
+            icon:icobrands.faYoutube,
             path:"youtube.com"
         },
         {
-            icon:Fa.faLinkedin,
+            icon:icobrands.faLinkedin,
             path:"Linkedin.com"
         },
         {
-            icon:Fa.faInstagram,
+            icon:icobrands.faInstagram,
             path:'instagram.com'
-        }
-    ];
+        }];
+    const NavBarItem = [
+        {
+            icon: icoSolid.faHouse,
+            text:'Home'
+        },{
+            icon: icoReg.faUser,
+            text:'About'
+        },{
+            icon: icoReg.faFile,
+            text:'Resume'
+        },{
+            icon: icoSolid.faBarsProgress,
+            text: 'Projects'
+        },{
+            icon: icoReg.faEnvelope,
+            text: 'Contact'
+        }];
     return(
     <div className="MenuBarContainer">
+        {/* NavBar profile */}
         <div className="Profile">
             <img className="ProfilePic" src={ProfileImg} alt="ProfilePic"></img>
             <h1 className="TextName">Dung Hoang Le</h1>
@@ -38,6 +58,18 @@ export default function MenuBar(){
                 })}
             </div>
         </div>
-        <div className="Nav-Menu"></div>
+        {/* Navbar menu item */}
+        <div className="Nav-Menu">
+            {NavBarItem.map((item,index)=>{
+                return(
+                    <Link to="#" className="NavbarItem" key={index}>
+                        <FontAwesomeIcon icon={item.icon}/>
+                        &nbsp;
+                        &nbsp;
+                        {item.text}
+                    </Link>
+                );
+            })}
+        </div>
     </div>);
 }

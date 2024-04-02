@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 
 function App() {
   const[isNavBarDisplay,setNavBar] = useState(true);
-  const{height,width} = useWindowDimensions();
+  const{width} = useWindowDimensions();
   const menuBtnIcon = isNavBarDisplay ? icoSolid.faBars : icoSolid.faTimes;
   const handleMenuBtn = () =>{
     setNavBar(!isNavBarDisplay)
@@ -21,6 +21,7 @@ function App() {
       const navbar = document.querySelector(".MenuBarContainer");
       navbar.classList.remove('open');
     }
+    console.log("testing")
   }
   // componentdidMount
   useEffect(()=>{
@@ -41,7 +42,7 @@ function App() {
         setNavBar(true);
       }
     }
-  },[width,isNavBarDisplay]);
+  },[width]);
   return (
     <div className="App">
       <Router>

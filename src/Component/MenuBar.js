@@ -5,7 +5,8 @@ import * as icobrands from '@fortawesome/free-brands-svg-icons'
 import * as icoReg from '@fortawesome/free-regular-svg-icons'
 import * as icoSolid from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom/cjs/react-router-dom";
-// import { icon } from "@fortawesome/fontawesome-svg-core";
+import useWindowDimensions from "../CustomHooks/HandleResize";
+import { useEffect } from "react";
 
 export default function MenuBar(){
     const socialMedia = [
@@ -42,6 +43,15 @@ export default function MenuBar(){
             icon: icoReg.faEnvelope,
             text: 'Contact'
         }];
+    const {width} = useWindowDimensions();
+    useEffect(()=>{
+        const menubar = document.querySelector(".MenuBarContainer");
+        if(width < 1200){
+            menubar.style.overflowY = 'scroll';
+        }else{
+            menubar.style.overflowY = 'hidden';
+        }
+    },[width]);
     return(
     //set menubar open by default
     <div className="MenuBarContainer open">

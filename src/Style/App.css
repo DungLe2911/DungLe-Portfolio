@@ -1,3 +1,23 @@
 .App {
   text-align: center;
 }
+
+.MenuBtn{
+  aspect-ratio: 1;
+  width: 50px;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  background-color: #149ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  margin-top: 10px;
+  border: 2px solid black
+}
+
+.MenuBtn:hover{
+  cursor: pointer;
+}

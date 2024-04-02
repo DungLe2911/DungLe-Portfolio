@@ -43,7 +43,8 @@ export default function MenuBar(){
             text: 'Contact'
         }];
     return(
-    <div className="MenuBarContainer">
+    //set menubar open by default
+    <div className="MenuBarContainer open">
         {/* NavBar profile */}
         <div className="Profile">
             <img className="ProfilePic" src={ProfileImg} alt="ProfilePic"></img>

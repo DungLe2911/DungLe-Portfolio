@@ -13,8 +13,7 @@ To make any changes to deployment, need to commit and push the changes to the ma
 
 ```git push -u origin main```
 
-Once the changes is made to the repository, we will make a new deployment:
-
+Once the changes is made to the repository, we will make a new deployment:  
 First, create a new build with all the new changes
 
 ```npm run build```
@@ -23,4 +22,5 @@ Then
 
 ```npm run deploy```
 
-to make the new build go live
+to make the new build go live  
+Deployment is at: https://dungle2911.github.io/DungLe-Portfolio/

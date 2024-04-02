@@ -1,6 +1,6 @@
 .MenuBarContainer{
     position: fixed;
-    left: 0;
+    left: -300px; /* Start off-screen */
     top: 0;
     width: 300px;
     height: 100%;
@@ -8,6 +8,11 @@
     display: flex;
     flex-direction: column;
     z-index: 100;
+    transition: left 0.3s ease;
+}
+
+.open{
+    left:0
 }
 
 .Profile{

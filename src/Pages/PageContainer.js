@@ -10,8 +10,8 @@ const containerStyle = {
     //rest is hiding the appearance of the scroll bar
     height: "100vh",
     scrollbarWidth: "none", // For Firefox
-    "-ms-overflow-style": "none", // For IE/Edge
-    "::-webkit-scrollbar": {
+    "msOverflowStyle": "none", // For IE/Edge
+    "::WebkitScrollbar": {
         display: 'none',
     }
   };

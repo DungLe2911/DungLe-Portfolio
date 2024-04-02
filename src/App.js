@@ -11,17 +11,17 @@ import { useEffect } from 'react';
 function App() {
   const[isNavBarDisplay,setNavBar] = useState(true);
   const{width} = useWindowDimensions();
-  const menuBtnIcon = isNavBarDisplay ? icoSolid.faBars : icoSolid.faTimes;
+  const menuBtnIcon = isNavBarDisplay ? icoSolid.faTimes:icoSolid.faBars;
   const handleMenuBtn = () =>{
-    setNavBar(!isNavBarDisplay)
-    if(isNavBarDisplay){
+    // setNavBar(!isNavBarDisplay)
+    if(!isNavBarDisplay){
       const navbar = document.querySelector(".MenuBarContainer");
       navbar.classList.add('open');
     }else{
       const navbar = document.querySelector(".MenuBarContainer");
       navbar.classList.remove('open');
     }
-    console.log("testing")
+    setNavBar(!isNavBarDisplay)
   }
   // componentdidMount
   useEffect(()=>{

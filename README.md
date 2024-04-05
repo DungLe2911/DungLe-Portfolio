@@ -1,6 +1,7 @@
-# Operating within the project
+# Operating Procedures
 
-Running the project locally
+# Running the Project Locally  
+To run the project locally, execute the following command:
 
 
 ``` npm start ```
@@ -24,3 +25,8 @@ Then
 
 to make the new build go live  
 Deployment is at: https://dungle2911.github.io/DungLe-Portfolio/
+
+---
+
+To ensure responsiveness without starting from scratch, this project leverages the Ant Design Library. Explore more about the library at   
+https://ant.design/.

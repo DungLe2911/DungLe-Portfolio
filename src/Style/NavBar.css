@@ -1,33 +1,33 @@
-.MenuBarContainer{
-    position: fixed;
-    left: -300px; /* Start off-screen */
-    top: 0;
-    width: 300px;
+.NavBarContainer{
+    width: 100%;
     height: 100%;
     background-color: #040b14;
     display: flex;
+    display: flex;
     flex-direction: column;
-    z-index: 100;
-    transition: left 0.3s ease;
 }
 
-.open{
+/* .open{
     left:0
-}
+} */
 
 .Profile{
-    display: block;
-    height: 240;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    height: auto;
     width: 100%;
     border-bottom: 2px solid #2c2f3f;
 }
 
 .ProfilePic{
     border: 8px solid #2c2f3f;
+    width: 100%;
     border-radius: 50%;
     aspect-ratio: 1;
-    width: 120px;
-    margin-top: 15px;
+    width: 8rem;
+    margin-top: 1rem;
 }
 
 .TextName{
@@ -36,8 +36,10 @@
     font-size: 24px;
     margin: 0;
     text-align: center;
-    font-family: "Poppins", sans-serif;;
+    font-family: "Poppins", sans-serif;
+    margin-top: 0.5rem;
 }
+
 a{
     text-decoration: none;
     color: white
@@ -50,8 +52,9 @@ a{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     margin-bottom: 1rem;
+    flex-wrap: wrap; /* Allow items to wrap when necessary */
 }
 
 .SocialTag{
@@ -69,15 +72,24 @@ a{
     background-color: #149ddd;
 }
 
-.Nav-Menu{
+.NavBarMenu{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    background-color: transparent;
+
+    overflow: hidden; 
 }
 
-.NavbarItem{
+.NavBarMenu > .ant-menu-item{
     max-width: 95%;
+
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis (...) for truncated text */
+
+
     height: fit-content;
     margin: 5px;
     padding-top: 20px;
@@ -87,14 +99,19 @@ a{
     display: flex;
     flex-direction: row;
     padding-left: 15px;
+    align-items: center;
+    font-size: 1.5rem;
     /* Added transition property - helps smooth out on hover */
-    transition: background-color 0.3s ease, padding 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease-in, padding 0.3s ease, color 0.3s ease;
 }
 
-.NavbarItem:hover{
-    background-color: green;
-    color: white;
+.NavBarMenu > .ant-menu-item:hover{
+    color: white !important;
     padding-top:30px;
     padding-bottom: 30px;
     border: 2px solid white ;
+}
+
+.NavBarMenu > .ant-menu-item-selected{
+    color: white;
 }

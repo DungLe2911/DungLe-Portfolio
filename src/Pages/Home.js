@@ -31,11 +31,13 @@ export default function Home(){
 
     return(
         <div className="HomePageContainer">
+            <img src={hill5} alt="hill5" id="hill5" />
+
             <div className="textArea">
                 <div className="text">Hello, my name is Dung Hoang Le</div>
                 <div className="subtitle">Welcome to my website!</div>
             </div>
-            <img src={hill5} alt="hill5" id="hill5" />
+
             <img src={hill4} alt="hill4" id="hill4" />
             <img src={hill3} alt="hill3" id="hill3" />
             <img src={hill2} alt="hill2" id="hill2" />

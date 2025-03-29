@@ -1,0 +1,43 @@
+.App{
+    margin: 15px 12px;
+    margin-bottom: 75px;
+    min-width: 259px;
+    display: block;
+    unicode-bidi: isolate;
+}
+
+@media (min-width: 580px) {
+    .App{
+        margin-top: 60px;
+        margin-bottom: 100px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .App{
+        margin-bottom: 60px;
+    }
+
+    .contentArea{
+        position: relative;
+        width: max-content;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1250px) {
+    .App{
+        max-width: 1200px;
+        margin-inline: auto;
+        display: flex;
+        justify-content: center;
+        align-self: stretch;
+        gap: 25px;
+    }
+
+    .contentArea{
+        min-width: 75%;
+        width: 75%;
+        margin: 0;
+    }
+}

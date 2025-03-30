@@ -1,66 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { Document, Page, pdfjs } from 'react-pdf';
+import "../Style/PDFPreview.css"
 
-function PDFPreview({ googleDriveUrl }) {
-  const [embedUrl, setEmbedUrl] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url,
+).toString();
 
-  useEffect(() => {
-    if (googleDriveUrl) {
-      try {
-        // Extract file ID from Google Drive URL
-        let fileId = '';
-        if (googleDriveUrl.includes('/file/d/')) {
-          fileId = googleDriveUrl.split('/file/d/')[1].split('/')[0];
-        } else if (googleDriveUrl.includes('id=')) {
-          fileId = googleDriveUrl.split('id=')[1].split('&')[0];
-        } else if (googleDriveUrl.includes('/d/')) {
-          fileId = googleDriveUrl.split('/d/')[1].split('/')[0];
-        }
-        if (!fileId) {
-          throw new Error('Could not extract file ID from the provided Google Drive URL');
-        }
-        // Set the Google Drive embed URL
-        setEmbedUrl(`https://drive.google.com/file/d/${fileId}/preview`);
-        setLoading(false);
-      } catch (err) {
-        console.error('Error processing Google Drive URL:', err);
-        setError('Failed to process the Google Drive URL. Please check the URL format.');
-        setLoading(false);
-      }
-    }
-  }, [googleDriveUrl]);
+const PDFPreview = (props) => {
+  const [numPages, setNumPages] = useState();
+  const [pageNumber, setPageNumber] = useState(1);
 
-  if (loading) {
-    return <div>Loading PDF viewer...</div>;
-  }
-
-  if (error) {
-    return <div className="error">{error}</div>;
+  function onDocumentLoadSuccess({ numPages }){
+    setNumPages(numPages);
   }
 
   return (
-    <div className="pdf-container" style={{ 
-      width: "fit-content", 
-      height: "fit-content",
-      border: '1px solid #ccc',
-      borderRadius: '4px',
-      overflow: 'hidden'
-    }}>
-      {embedUrl ? (
-        <iframe
-          src={embedUrl}
-          width="100%"
-          height="100%"
-          title="PDF Viewer"
-          frameBorder="0"
-          loading="lazy"
-        />
-      ) : (
-        <div>No PDF URL provided</div>
-      )}
+    <div className="previewContainer">
+      <Document file={props.path} onLoadSuccess={onDocumentLoadSuccess}>
+        <Page canvasBackground={"white"} scale={props.scale? props.scale: 1.7} width={200} pageNumber={pageNumber} renderTextLayer={false} renderAnnotationLayer={false} />
+      </Document>
     </div>
   );
 }
+
 
 export default PDFPreview;

@@ -19,6 +19,10 @@ function App() {
           <Route path="/DungLe-Portfolio/project" element ={<Project />}/>
           <Route path="/DungLe-Portfolio/contact" element ={<Contact />}/>
         </Routes>
+        <div className="copyright">
+          Work inspired by &nbsp; 
+          <a href="https://codewithsadee.github.io/vcard-personal-portfolio/" target="_blank" rel="noopener noreferrer">© Richard Hanrick</a>
+        </div>
       </div>
     </div>
   );

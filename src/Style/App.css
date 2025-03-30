@@ -6,6 +6,21 @@
     unicode-bidi: isolate;
 }
 
+.copyright{
+    color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    right: 0px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.copyright > a{
+    color: white;
+    text-decoration: underline;
+}
+
 @media (min-width: 580px) {
     .App{
         margin-top: 60px;

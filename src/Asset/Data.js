@@ -1,3 +1,6 @@
+import HiPDACLetter from '../Asset/HiPDAC Letter.pdf';
+import SmartEZLeter from '../Asset/SmartEZ Letter.pdf';
+
 const contactsList = [
     {
         icon: "faEnvelope",
@@ -176,8 +179,14 @@ const TestimonialsList = [
 ]
 
 const RecommendationLettersURL = [
-    "https://drive.google.com/file/d/1XDGZi_vqrK0vdbJD6MnXCI2NFJGtqSUB/view?usp=sharing",
-    "https://drive.google.com/file/d/1YLytHoSZhZZztXH9uIHaBh72l56KdW4Q/view?usp=sharing",
+    {
+        name:"HiPDAC Research Group",
+        filePath: HiPDACLetter
+    },
+    {
+        name:"SmartEZ Intern",
+        filePath: SmartEZLeter
+    },
 ]
 
 

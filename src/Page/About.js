@@ -2,11 +2,23 @@ import "../Style/About.css"
 import { serviceList, TestimonialsList, RecommendationLettersURL} from "../Asset/Data.js"
 import defaultAvatar from "../Asset/defaultAvatar.png"
 import quote from "../Asset/quote.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PDFPreview from "../Component/PDFPreview.js";
 export default function About(){
     const[modalOpen, setModalOpen] = useState(false);
     const[currentModal, setCurrentModal] = useState(-1);
+    const[previewModalOpen, setPreviewModalOpen] = useState(false);
+    const[currentPreviewModal, setCurrenPreviewtModal] = useState(-1);
+    const [width, setWidth] = useState(window.innerWidth);
+
+
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+        
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+      }, []);
+    
 
     const toggleModal = () =>{
         setModalOpen(!modalOpen);
@@ -23,6 +35,22 @@ export default function About(){
 
     const closeModal = ()=>{
         setModalOpen(false);
+    }
+
+    const togglePreviewModal = ()=>{
+        setPreviewModalOpen(!previewModalOpen)
+    }
+    const setPreviewModal = (index) =>{
+        setCurrenPreviewtModal(index);
+    }
+
+    const handlePreviewModalClick = (index)=>{
+        setPreviewModal(index);
+        togglePreviewModal();
+    }
+
+    const closePreviewModal = () =>{
+        setPreviewModalOpen(false);
     }
     return(
         <div className="pageContainer">
@@ -114,18 +142,27 @@ export default function About(){
                         </div>
                     </section>
                 </div>:<></>}
-            <section className="testimonials">
-                <h3 className="h3 testimonialsTitle">Achievements / Recomendations Letters</h3>
-                <ul className="testimonialsList has-scrollbar">
+            <section className="achievements">
+                <h3 className="h3 achievementsTitle">Achievements / Recomendations Letters</h3>
+                <ul className="achievementsList has-scrollbar">
                     {RecommendationLettersURL.map((url, index)=>{
                         return(
-                            <li key={index} className="testimonialsItem">
-                                <PDFPreview googleDriveUrl={url} />
+                            <li onClick={()=>{handlePreviewModalClick(index)}} key={index} className="achievementsItem">
+                                <div className="achievementsOverlay">{url.name}</div>
+                                <PDFPreview path={url.filePath}/>
                             </li>
                         )
                     })}
                 </ul>
             </section>
+            {previewModalOpen?
+                <div className="modalContainer">
+                    <div onClick={()=>{closePreviewModal()}} className="overlay" />
+                    <section className="testimonialsModal">
+                        <PDFPreview path={RecommendationLettersURL[currentPreviewModal].filePath} 
+                        scale={width > 1024? 4: width > 768? 3: width > 580? 2.27: 1.8}/>
+                    </section>
+                </div>:<></>}
         </div>
     )
 }

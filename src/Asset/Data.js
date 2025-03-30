@@ -39,26 +39,26 @@ const socialList = [
 const navBarList = [
     {
         title: "About",
-        link: "/"
+        link: "/DungLe-Portfolio/"
     },
     {
         title: "Resume",
-        link: "/resume"
+        link: "/DungLe-Portfolio/resume"
     },
     {
         title: "Projects",
-        link: "/project"
+        link: "/DungLe-Portfolio/project"
     },
     {
         title: "Contact",
-        link: "/contact"
+        link: "/DungLe-Portfolio/contact"
     }
 ]
 
 const educationList = [
     {
         period: "2018 - 2021",
-        school: "Washington State University",
+        school: "Washington State University - Voidland College of Engineering and Architecture",
         degree: "Bachelor of Science in Computer Science",
         GPA: 3.6
     },
@@ -163,4 +163,24 @@ const serviceList=[
         icon:"AI.svg", 
     },
 ]
-export {contactsList, socialList, navBarList, educationList, experienceList, serviceList};
+
+const TestimonialsList = [
+    {
+        avatar: null,
+        name: "Daniel Wade",
+        datetime: "Mar 19,2025",
+        paragraph:[
+            "Dung is an exemplary employee, exercising sound judgment and strong analytic skills to any tasks given. Key responsibilities in his current role include data analytics pertaining to inventory control and process flow that are directly reported, assisting in process optimization and product inventory control. Dung possesses a strong work ethic, ensuring that tasks are completed in a timely fashion, along with his strong sense of pride in his work to complete tasks properly. These attributes show a strong attention to detail that comes through in his work in his daily responsibilities and in his optimization skills, creating tools for streamlining and automating data tools.",
+        ]        
+    },  
+]
+
+const RecommendationLettersURL = [
+    "https://drive.google.com/file/d/1XDGZi_vqrK0vdbJD6MnXCI2NFJGtqSUB/view?usp=sharing",
+    "https://drive.google.com/file/d/1YLytHoSZhZZztXH9uIHaBh72l56KdW4Q/view?usp=sharing",
+]
+
+
+export {
+    contactsList, socialList, navBarList, educationList, experienceList,
+    serviceList, TestimonialsList, RecommendationLettersURL};

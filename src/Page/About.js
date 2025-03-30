@@ -1,7 +1,29 @@
 import "../Style/About.css"
-import { serviceList } from "../Asset/Data.js"
-
+import { serviceList, TestimonialsList, RecommendationLettersURL} from "../Asset/Data.js"
+import defaultAvatar from "../Asset/defaultAvatar.png"
+import quote from "../Asset/quote.svg";
+import { useState } from "react";
+import PDFPreview from "../Component/PDFPreview.js";
 export default function About(){
+    const[modalOpen, setModalOpen] = useState(false);
+    const[currentModal, setCurrentModal] = useState(-1);
+
+    const toggleModal = () =>{
+        setModalOpen(!modalOpen);
+    }
+
+    const setModal =(index) =>{
+        setCurrentModal(index)
+    }
+
+    const handleModalClick =(index)=>{
+        setModal(index);
+        toggleModal();
+    }
+
+    const closeModal = ()=>{
+        setModalOpen(false);
+    }
     return(
         <div className="pageContainer">
             <header>
@@ -36,6 +58,69 @@ export default function About(){
                                     <h4 className="h4 serviceTitle">{service.title}</h4>
                                     <p className="serviceText">{service.text}</p>
                                 </div>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </section>
+            <section className="testimonials">
+                <h3 className="h3 testimonialsTitle">Testimonials</h3>
+                <ul className="testimonialsList has-scrollbar">
+                    {TestimonialsList.map((testimonial, index)=>{
+                        return(
+                            <li onClick={()=>{handleModalClick(index)}} key={index} className="testimonialsItem">
+                                <div className="contentCard">
+                                    <figure className="testimonialsAvatarBox">
+                                        <img alt={testimonial.name} src={testimonial.avatar === null? defaultAvatar: require(`../Asset/${testimonial.avatar}`)} width={60} />
+                                    </figure>
+                                    <h4 className="h4 testimonialsItemTitle">
+                                        {testimonial.name}
+                                    </h4>
+                                    <div className="testimonialsText">
+                                        {testimonial.paragraph.map((par, index) =>{
+                                            return(
+                                                <p key={index}>
+                                                    {par}
+                                                </p>
+                                            )
+                                        })}
+                                    </div>
+                                </div>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </section>
+            {modalOpen?
+                <div className="modalContainer">
+                    <div onClick={()=>{closeModal()}} className="overlay" />
+                    <section className="testimonialsModal">
+                        <div className="modalImgWrapper">
+                            <figure className="modalAvatarBox">
+                                <img alt={TestimonialsList[currentModal].name} width={80} src={TestimonialsList[currentModal].avatar === null ? defaultAvatar : require(`../Asset/${TestimonialsList[currentModal].avatar}`)}/>
+                            </figure>
+                            <img src={quote} alt="quote icon"/>
+                        </div>
+                        <div className="modalContent">
+                            <h4 className="h3 modalTitle">{TestimonialsList[currentModal].name}</h4>
+                            <time datetime={new Date(TestimonialsList[currentModal].datetime).toISOString().split('T')[0]}>{TestimonialsList[currentModal].datetime}</time>
+                            {TestimonialsList[currentModal].paragraph.map((par,index)=>{
+                                return(
+                                    <p key={index}>
+                                        {par}
+                                    </p>
+                                )
+                            })}
+                        </div>
+                    </section>
+                </div>:<></>}
+            <section className="testimonials">
+                <h3 className="h3 testimonialsTitle">Achievements / Recomendations Letters</h3>
+                <ul className="testimonialsList has-scrollbar">
+                    {RecommendationLettersURL.map((url, index)=>{
+                        return(
+                            <li key={index} className="testimonialsItem">
+                                <PDFPreview googleDriveUrl={url} />
                             </li>
                         )
                     })}

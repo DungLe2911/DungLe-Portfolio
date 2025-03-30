@@ -1,7 +1,10 @@
 {
   "files": {
-    "main.css": "/DungLe-Portfolio/static/css/main.2d804389.css",
-    "main.js": "/DungLe-Portfolio/static/js/main.7291fca1.js",
+    "main.css": "/DungLe-Portfolio/static/css/main.06b0f219.css",
+    "main.js": "/DungLe-Portfolio/static/js/main.c40fcb22.js",
+    "static/media/pdf.worker.min.mjs": "/DungLe-Portfolio/static/media/pdf.worker.min.48ec784a5edb8e2894b8.mjs",
+    "static/media/SmartEZ Letter.pdf": "/DungLe-Portfolio/static/media/SmartEZ Letter.7755982c43edf5507013.pdf",
+    "static/media/HiPDAC Letter.pdf": "/DungLe-Portfolio/static/media/HiPDAC Letter.d4c8c83b7d36e156c50e.pdf",
     "static/media/profile.jpeg": "/DungLe-Portfolio/static/media/profile.baa0f6c3275cd39ab6f3.jpeg",
     "static/media/server.svg": "/DungLe-Portfolio/static/media/server.8b8a98a2212192c84901.svg",
     "static/media/AI.svg": "/DungLe-Portfolio/static/media/AI.5c7319efd9fba9ccc9e6.svg",
@@ -10,11 +13,11 @@
     "static/media/design.svg": "/DungLe-Portfolio/static/media/design.d6326a90fb3a6e270b2f.svg",
     "static/media/quote.svg": "/DungLe-Portfolio/static/media/quote.478aa3c6ff76bfa1cc652270d25603cb.svg",
     "index.html": "/DungLe-Portfolio/index.html",
-    "main.2d804389.css.map": "/DungLe-Portfolio/static/css/main.2d804389.css.map",
-    "main.7291fca1.js.map": "/DungLe-Portfolio/static/js/main.7291fca1.js.map"
+    "main.06b0f219.css.map": "/DungLe-Portfolio/static/css/main.06b0f219.css.map",
+    "main.c40fcb22.js.map": "/DungLe-Portfolio/static/js/main.c40fcb22.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d804389.css",
-    "static/js/main.7291fca1.js"
+    "static/css/main.06b0f219.css",
+    "static/js/main.c40fcb22.js"
   ]
 }

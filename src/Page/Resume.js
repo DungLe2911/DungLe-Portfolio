@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as FaSolid from '@fortawesome/free-solid-svg-icons'
 import "../Style/Resume.css"
 import { educationList, experienceList } from "../Asset/Data.js";
+// import { skillList } from "../Asset/Data.js";
 
 export default function Resume(){
     const getDuration = (dateRange) =>{
@@ -84,28 +85,23 @@ export default function Resume(){
                 </ol>
             </section>
 
-            <section className="timeline">
+            {/* <section className="timeline">
                 <div className="titleWrapper">
                     <div className="iconBox">
                         <FontAwesomeIcon  icon={FaSolid.faScrewdriverWrench}/>
                     </div>
                     <h3 className="h3">My Skills</h3>
                 </div>
-                {/* <ol className="timelineList">
-                    {educationList.map((education, index)=>{
-                        return (
-                            <li key={index} className="timelineItem">
-                                <h3 className="h3 timelineItemTitle">
-                                    {education.school}
-                                </h3>
-                                <span className="timelineText" style={{fontWeight: 700}}>{education.period}</span>
-                                <h4 className="h4 timelineText">{education.degree}</h4>
-                                <p className="timelineText">GPA: {education.GPA}</p>
+                <ul className="skillList">
+                    {skillList.map((skill,index)=>{
+                        return(
+                            <li key={index} className="skillItem">
+
                             </li>
                         )
                     })}
-                </ol> */}
-            </section>
+                </ul>
+            </section> */}
         </div>
     )
 }

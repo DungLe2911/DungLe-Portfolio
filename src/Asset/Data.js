@@ -172,6 +172,8 @@ const TestimonialsList = [
         avatar: null,
         name: "Daniel Wade",
         datetime: "Mar 19,2025",
+        relationship: "direct managed",
+        company: "South Georgia Pecan Co.",
         paragraph:[
             "Dung is an exemplary employee, exercising sound judgment and strong analytic skills to any tasks given. Key responsibilities in his current role include data analytics pertaining to inventory control and process flow that are directly reported, assisting in process optimization and product inventory control. Dung possesses a strong work ethic, ensuring that tasks are completed in a timely fashion, along with his strong sense of pride in his work to complete tasks properly. These attributes show a strong attention to detail that comes through in his work in his daily responsibilities and in his optimization skills, creating tools for streamlining and automating data tools.",
         ]        
@@ -189,7 +191,10 @@ const RecommendationLettersURL = [
     },
 ]
 
+const skillList = [
+
+]
 
 export {
     contactsList, socialList, navBarList, educationList, experienceList,
-    serviceList, TestimonialsList, RecommendationLettersURL};
+    serviceList, TestimonialsList, RecommendationLettersURL, skillList};

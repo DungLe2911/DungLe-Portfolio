@@ -104,6 +104,7 @@ export default function About(){
                                     <h4 className="h4 testimonialsItemTitle">
                                         {testimonial.name}
                                     </h4>
+                                    <h6 className="h6 testimonialsRelationship"> {testimonial.relationship} at {testimonial.company}</h6>
                                     <div className="testimonialsText">
                                         {testimonial.paragraph.map((par, index) =>{
                                             return(

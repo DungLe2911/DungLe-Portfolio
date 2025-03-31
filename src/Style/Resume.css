@@ -102,6 +102,19 @@
     margin-top: 5px;
 }
 
+.skillList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    position: relative;
+    height: 250px;
+    width: 100%;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    border: 1px solid var(--jet);
+    overflow: hidden;
+}
+
 @media (min-width: 580px) {
     .pageContainer {
         width: 520px;
@@ -134,6 +147,10 @@
         left: -43px;
     }
 
+    .serviceList {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 25px;
+    }
 }
 
 @media (min-width: 768px) {

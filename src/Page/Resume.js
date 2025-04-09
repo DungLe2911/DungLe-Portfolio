@@ -45,7 +45,7 @@ export default function Resume(){
                                 <h3 className="h3 timelineItemTitle">
                                     {education.school}
                                 </h3>
-                                <span className="timelineText" style={{fontWeight: 700}}>{education.period}</span>
+                                {/* <span className="timelineText" style={{fontWeight: 700}}>{education.period}</span> */}
                                 <h4 className="h4 timelineText">{education.degree}</h4>
                                 <p className="timelineText">GPA: {education.GPA}</p>
                             </li>

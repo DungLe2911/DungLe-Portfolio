@@ -2,8 +2,12 @@ import "../Style/About.css"
 import { serviceList, TestimonialsList, RecommendationLettersURL} from "../Asset/Data.js"
 import defaultAvatar from "../Asset/defaultAvatar.png"
 import quote from "../Asset/quote.svg";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PDFPreview from "../Component/PDFPreview.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as FaBrand from '@fortawesome/free-brands-svg-icons'
+
+
 export default function About(){
     const[modalOpen, setModalOpen] = useState(false);
     const[currentModal, setCurrentModal] = useState(-1);
@@ -11,12 +15,31 @@ export default function About(){
     const[currentPreviewModal, setCurrenPreviewtModal] = useState(-1);
     const [width, setWidth] = useState(window.innerWidth);
 
+    const modalOpenRef = useRef(modalOpen);
+
+    useEffect(() => {
+        modalOpenRef.current = modalOpen; // always update ref when modalOpen changes
+    }, [modalOpen]);
+
 
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth);
-        
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
+        const handleKeyDown = (e) => {
+            if (e.key === "Escape") {
+              if(modalOpenRef.current === true){
+                closeModal();
+              }
+            }
+          };
+      
+          window.addEventListener("resize", handleResize);
+          window.addEventListener("keydown", handleKeyDown);
+      
+          return () => {
+            window.removeEventListener("resize", handleResize);
+            window.removeEventListener("keydown", handleKeyDown);
+          };
+      
       }, []);
     
 
@@ -61,7 +84,7 @@ export default function About(){
             </header>
             <section className="aboutText">
                 <p>
-                Hi, I'm Dung Le, a full-stack developer specializing in backend development (75% backend, 25% frontend) with experience in machine learning. I graduated from Washington State University in 2021 with a degree in Computer Science and have been building scalable web applications for over four years
+                Hi, I'm Dung Le, a full-stack developer specializing in backend development (75% backend, 25% frontend) with experience in machine learning. I graduated from Washington State University with a degree in Computer Science and have been building scalable web applications for over four years
                 </p>
                 <p>
                 In my current role as an Inventory Control Specialist and Data Engineer at South Georgia Pecan Co., I bridge the gap between data and production efficiency. Using Python and MySQL, I clean and structure production data, ensuring accuracy while optimizing manufacturing workflows. Beyond data management, I analyze trends, plan production schedules, and develop strategies to improve efficiency on the factory floor
@@ -131,11 +154,17 @@ export default function About(){
                             <img src={quote} alt="quote icon"/>
                         </div>
                         <div className="modalContent">
-                            <h4 className="h3 modalTitle">{TestimonialsList[currentModal].name}</h4>
+                            <div className="modalInfo">                
+                                <h4 className="h3 modalTitle">{TestimonialsList[currentModal].name}</h4>
+                                <a className="iconBox" href={TestimonialsList[currentModal].url}>
+                                    <FontAwesomeIcon  icon={FaBrand.faLinkedin}/>
+                                </a>
+                            </div>
+                            <h5 className="h5 modalPosition">{TestimonialsList[currentModal].position}</h5>
                             <time datetime={new Date(TestimonialsList[currentModal].datetime).toISOString().split('T')[0]}>{TestimonialsList[currentModal].datetime}</time>
                             {TestimonialsList[currentModal].paragraph.map((par,index)=>{
                                 return(
-                                    <p key={index}>
+                                    <p key={index} className="modalParagraph">
                                         {par}
                                     </p>
                                 )

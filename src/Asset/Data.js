@@ -171,11 +171,29 @@ const TestimonialsList = [
     {
         avatar: null,
         name: "Daniel Wade",
+        position: "Process Engineer & Dept. Assistant Manager",
         datetime: "Mar 19,2025",
         relationship: "direct managed",
         company: "South Georgia Pecan Co.",
+        url:"https://www.linkedin.com/in/daniel-wade-769780158/",
         paragraph:[
             "Dung is an exemplary employee, exercising sound judgment and strong analytic skills to any tasks given. Key responsibilities in his current role include data analytics pertaining to inventory control and process flow that are directly reported, assisting in process optimization and product inventory control. Dung possesses a strong work ethic, ensuring that tasks are completed in a timely fashion, along with his strong sense of pride in his work to complete tasks properly. These attributes show a strong attention to detail that comes through in his work in his daily responsibilities and in his optimization skills, creating tools for streamlining and automating data tools.",
+        ]        
+    },
+    {
+        avatar: null,
+        name: "Laurie Wright",
+        datetime: "Apr 8,2025",
+        position: "Food Safety and Quality Assurance Assistant Manager",
+        relationship: "Senior to Dung but not direct managed",
+        company: "South Georgia Pecan Co.",
+        url: "https://www.linkedin.com/in/laurie-wright-562286187/",
+        paragraph:[
+            "Hello,",
+            "My name is Laurie Wright. I am the Food Safety and Quality Assurance Assistant Manager at South Georgia Pecan in Valdosta, Georgia. I have worked with Mr. Le for a few years. During this time, I have witnessed an intense amounts of growth. He has taken on more responsibilities and has become someone that others look up to.",
+            "Mr. Le has exceptional technical skills. There has not been a task that has been given to him that he has not been able to complete. He is very thorough with documentation and extremely detail oriented.",
+            "Mr. Le takes his work very seriously. He completes delegated tasks on time. He works well with others. He has a fabulous work ethic; and insists on doing the best job possible.",
+            "Mr. Le will do great things as he moves forward in his career path! He would be an extremely valuable asset in any position he fills."
         ]        
     },  
 ]

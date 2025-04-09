@@ -200,6 +200,25 @@
     display: none;
 }
 
+.modalParagraph{
+    margin-bottom: 10px;
+}
+
+.modalInfo{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    height: fit-content;
+    align-items: center;
+}
+
+
+.modalInfo > .iconBox{
+    height: 30px;
+    width: 30px;
+    color: var(--orange-yellow-crayola);;
+}
+
 .overlay {
     position: fixed;
     top: 0;
@@ -243,6 +262,13 @@
 
 .modalTitle {
     margin-bottom: 4px;
+}
+
+.modalPosition{
+    margin-bottom: 4px;
+    font-size: var(--fs-6);
+    color: var(--white-1);
+    font-weight: var(--fw-300);
 }
 
 .modalContent time {
@@ -319,6 +345,9 @@
     color: var(--light-gray-70);
     font-weight: var(--fw-300);
     line-height: 1.6;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 @media (min-width: 580px) {

@@ -1,7 +1,7 @@
 import "../Style/About.css"
 import { serviceList, TestimonialsList, RecommendationLettersURL} from "../Asset/Data.js"
 import defaultAvatar from "../Asset/defaultAvatar.png"
-import quote from "../Asset/quote.svg";
+import quote from "../Asset/About/quote.svg";
 import { useEffect, useRef, useState } from "react";
 import PDFPreview from "../Component/PDFPreview.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -103,7 +103,7 @@ export default function About(){
                         return(
                             <li key={index} className="serviceItem">
                                 <div className="serviceIconBox">
-                                    <img src={require(`../Asset/${service.icon}`)} alt={service.text} width={55}/>
+                                    <img src={require(`../Asset/About/${service.icon}`)} alt={service.text} width={55}/>
                                 </div>
                                 <div className="serviceContentBox">
                                     <h4 className="h4 serviceTitle">{service.title}</h4>

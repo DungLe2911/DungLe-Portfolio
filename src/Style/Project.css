@@ -26,6 +26,13 @@
     border-radius: 3px;
 }
 
+.projectList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
 @media (min-width: 580px) {
     .pageContainer {
         width: 520px;

@@ -7,6 +7,9 @@ export default function Project(){
                     Projects
                 </h2>
             </header>
+            <ul className="projectList">
+                
+            </ul>
         </div>
     )
 }

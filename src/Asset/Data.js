@@ -1,6 +1,9 @@
-import HiPDACLetter from '../Asset/HiPDAC Letter.pdf';
-import SmartEZLeter from '../Asset/SmartEZ Letter.pdf';
+import HiPDACLetter from '../Asset/About/HiPDAC Letter.pdf';
+import SmartEZLeter from '../Asset/About/SmartEZ Letter.pdf';
+import FreddyLetter from '../Asset/About/Freddy Sublet.pdf'
 
+
+// -------------------------------------------- NAV BAR-------------------------------------------------------
 const contactsList = [
     {
         icon: "faEnvelope",
@@ -57,6 +60,8 @@ const navBarList = [
         link: "/DungLe-Portfolio/contact"
     }
 ]
+
+// -------------------------------------------- RESUME PAGE -------------------------------------------------------
 
 const educationList = [
     {
@@ -144,6 +149,11 @@ const experienceList = [
     },
 ]
 
+const skillList = [
+
+]
+
+// -------------------------------------------- ABOUT PAGE-------------------------------------------------------
 const serviceList=[
     {
         title: "Web Design",
@@ -204,14 +214,18 @@ const RecommendationLettersURL = [
         filePath: HiPDACLetter
     },
     {
+        name:"South Georgia Pecan Co. Senior",
+        filePath: FreddyLetter
+    },
+    {
         name:"SmartEZ Intern",
         filePath: SmartEZLeter
     },
 ]
 
-const skillList = [
+// -------------------------------------------- PROJECT PAGE-------------------------------------------------------
 
-]
+
 
 export {
     contactsList, socialList, navBarList, educationList, experienceList,

@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/DungLe-Portfolio/static/css/main.81b77557.css",
-    "main.js": "/DungLe-Portfolio/static/js/main.cc9f8afe.js",
+    "main.css": "/DungLe-Portfolio/static/css/main.96688a4d.css",
+    "main.js": "/DungLe-Portfolio/static/js/main.e161813b.js",
     "static/media/pdf.worker.min.mjs": "/DungLe-Portfolio/static/media/pdf.worker.min.48ec784a5edb8e2894b8.mjs",
     "static/media/SmartEZ Letter.pdf": "/DungLe-Portfolio/static/media/SmartEZ Letter.7755982c43edf5507013.pdf",
     "static/media/HiPDAC Letter.pdf": "/DungLe-Portfolio/static/media/HiPDAC Letter.d4c8c83b7d36e156c50e.pdf",
     "static/media/profile.jpeg": "/DungLe-Portfolio/static/media/profile.baa0f6c3275cd39ab6f3.jpeg",
     "static/media/server.svg": "/DungLe-Portfolio/static/media/server.8b8a98a2212192c84901.svg",
+    "static/media/Freddy Sublet.pdf": "/DungLe-Portfolio/static/media/Freddy Sublet.6080b175396514747fdd.pdf",
     "static/media/AI.svg": "/DungLe-Portfolio/static/media/AI.5c7319efd9fba9ccc9e6.svg",
     "static/media/defaultAvatar.png": "/DungLe-Portfolio/static/media/defaultAvatar.d67449bd200299087929.png",
     "static/media/dev.svg": "/DungLe-Portfolio/static/media/dev.2a51ebae3899ae5ab67a.svg",
     "static/media/design.svg": "/DungLe-Portfolio/static/media/design.d6326a90fb3a6e270b2f.svg",
     "static/media/quote.svg": "/DungLe-Portfolio/static/media/quote.478aa3c6ff76bfa1cc652270d25603cb.svg",
     "index.html": "/DungLe-Portfolio/index.html",
-    "main.81b77557.css.map": "/DungLe-Portfolio/static/css/main.81b77557.css.map",
-    "main.cc9f8afe.js.map": "/DungLe-Portfolio/static/js/main.cc9f8afe.js.map"
+    "main.96688a4d.css.map": "/DungLe-Portfolio/static/css/main.96688a4d.css.map",
+    "main.e161813b.js.map": "/DungLe-Portfolio/static/js/main.e161813b.js.map"
   },
   "entrypoints": [
-    "static/css/main.81b77557.css",
-    "static/js/main.cc9f8afe.js"
+    "static/css/main.96688a4d.css",
+    "static/js/main.e161813b.js"
   ]
 }

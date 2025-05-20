@@ -149,7 +149,154 @@ const experienceList = [
     },
 ]
 
-const skillList = [
+const toolBox = [
+    {
+        name: "GitHub",
+        iconPath:"GitHub.png",
+        category: 'tools'
+    },
+    {
+        name: "HTML",
+        iconPath:"HTML.png",
+        category: 'Frontend'
+    },
+    {
+        name: "CSS",
+        iconPath:"CSS.png",
+        category: 'Frontend'
+    },
+    {
+        name: "Javascript",
+        iconPath:"JS.png",
+        category: 'Frontend'
+    },
+    {
+        name: "NodeJS",
+        iconPath:"NodeJS.png",
+        category: 'Backend'
+    },
+    {
+        name: "SpringBoot",
+        iconPath:"SpringBoot.png",
+        category: 'Backend'
+    },
+    {
+        name: "ReactJS",
+        iconPath:"ReactJS.png",
+        category: 'Frontend'
+    },
+    {
+        name: "Vue",
+        iconPath:"Vue.png",
+        category: 'Frontend'
+    },
+    {
+        name: "Tailwind",
+        iconPath:"Tailwind.png",
+        category: 'Frontend'
+    },
+    {
+        name: "Heroku",
+        iconPath:"Heroku.png",
+        category: 'Frontend'
+    },
+    {
+        name: "Vercel",
+        iconPath:"Vercel.png",
+        category: 'Frontend'
+    },
+    {
+        name: "Netlify",
+        iconPath:"Netlify.png",
+        category: 'Frontend'
+    },
+    {
+        name: "MUI",
+        iconPath:"MUI.png",
+        category: 'Frontend'
+    },
+    {
+        name: "Bootstrap",
+        iconPath:"Bootstrap.png",
+        category: 'Frontend'
+    },
+    {
+        name: "MySQL",
+        iconPath:"MySQL.png",
+        category: 'Backend'
+    },
+    {
+        name: "MongoDB",
+        iconPath:"MongoDB.png",
+        category: 'Backend'
+    },
+    {
+        name: "Microsoft SQL",
+        iconPath:"MS SQL.png",
+        category: 'Backend'
+    },
+    {
+        name: "Hibernate",
+        iconPath:"Hibernate.png",
+        category: 'Backend'
+    },
+    {
+        name: "AWS",
+        iconPath:"AWS.png",
+        category: 'Cloud'
+    },
+    {
+        name: "RabbitMQ",
+        iconPath:"RabbitMQ.png",
+        category: 'Backend'
+    },
+    {
+        name: "Kafka",
+        iconPath:"Kafka.png",
+        category: 'Backend'
+    },
+    {
+        name: "GitHub",
+        iconPath:"GitHub.png",
+        category: 'Tool'
+    },
+    {
+        name: "Kubernetes",
+        iconPath:"Kubernetes.png",
+        category: 'Tool'
+    },
+    {
+        name: "Docker",
+        iconPath:"Docker.png",
+        category: 'Tool'
+    },
+    {
+        name: "Postman",
+        iconPath:"Postman.png",
+        category: 'Tool'
+    },
+    {
+        name: "Jenkins",
+        iconPath:"Jenkins.png",
+        category: 'Tool'
+    },
+    {
+        name: "OAuth",
+        iconPath:"OAuth.png",
+        category: 'Backend'
+    },
+    {
+        name: "GitLab",
+        iconPath:"GitLab.png",
+        category: 'Tool'
+    },
+    {
+        name: "JWT",
+        iconPath:"JWT.png",
+        category: 'Backend'
+    },
+
+
 
 ]
 
@@ -229,4 +376,4 @@ const RecommendationLettersURL = [
 
 export {
     contactsList, socialList, navBarList, educationList, experienceList,
-    serviceList, TestimonialsList, RecommendationLettersURL, skillList};
+    serviceList, TestimonialsList, RecommendationLettersURL, toolBox};

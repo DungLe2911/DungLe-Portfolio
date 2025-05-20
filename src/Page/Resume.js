@@ -2,29 +2,39 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as FaSolid from '@fortawesome/free-solid-svg-icons'
 import "../Style/Resume.css"
 import { educationList, experienceList } from "../Asset/Data.js";
-// import { skillList } from "../Asset/Data.js";
+import { toolBox } from "../Asset/Data.js";
+import { useEffect, useState } from "react";
 
-export default function Resume(){
-    const getDuration = (dateRange) =>{
+export default function Resume() {
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    const getDuration = (dateRange) => {
         const [startStr, endStr] = dateRange.split(" - ");
         const startDate = new Date(Date.parse(startStr));
         const endDate = endStr === "Present" ? new Date() : new Date(Date.parse(endStr));
 
-    
+
         let years = endDate.getFullYear() - startDate.getFullYear();
         let months = endDate.getMonth() - startDate.getMonth();
-    
+
         if (months < 0) {
             years -= 1;
             months += 12;
         }
-    
+
         let result = [];
         if (years > 0) result.push(`${years} year${years > 1 ? "s" : ""}`);
         if (months > 0) result.push(`${months} month${months > 1 ? "s" : ""}`);
         return result.join(", ");
     }
-    return(
+    return (
         <div className="pageContainer">
             <header>
                 <h2 className=" h2 articleTitle">
@@ -34,12 +44,12 @@ export default function Resume(){
             <section className="timeline">
                 <div className="titleWrapper">
                     <div className="iconBox">
-                        <FontAwesomeIcon  icon={FaSolid.faBookOpen}/>
+                        <FontAwesomeIcon icon={FaSolid.faBookOpen} />
                     </div>
                     <h3 className="h3"> Education</h3>
                 </div>
                 <ol className="timelineList">
-                    {educationList.map((education, index)=>{
+                    {educationList.map((education, index) => {
                         return (
                             <li key={index} className="timelineItem">
                                 <h3 className="h3 timelineItemTitle">
@@ -57,22 +67,22 @@ export default function Resume(){
             <section className="timeline">
                 <div className="titleWrapper">
                     <div className="iconBox">
-                        <FontAwesomeIcon  icon={FaSolid.faBriefcase}/>
+                        <FontAwesomeIcon icon={FaSolid.faBriefcase} />
                     </div>
                     <h3 className="h3"> Experience</h3>
                 </div>
                 <ol className="timelineList">
-                    {experienceList.map((experience, index)=>{
+                    {experienceList.map((experience, index) => {
                         return (
                             <li key={index} className="timelineItem">
                                 <h4 className="h4 timelineItemTitle">
                                     {experience.title}
                                 </h4>
-                                <h5 className="h5 timelineText" style={{fontWeight: 700}}>company: {experience.company}</h5>
+                                <h5 className="h5 timelineText" style={{ fontWeight: 700 }}>company: {experience.company}</h5>
                                 <h5 className="h5 timelineText">{experience.time} • {getDuration(experience.time)}</h5>
                                 <ol className="experienceList">
-                                    {experience.bulletPoints.map((point, index)=>{
-                                        return(
+                                    {experience.bulletPoints.map((point, index) => {
+                                        return (
                                             <li key={index} className="experienceBulletPoint">
                                                 {point}
                                             </li>
@@ -85,23 +95,108 @@ export default function Resume(){
                 </ol>
             </section>
 
-            {/* <section className="timeline">
+            <section className="timeline">
                 <div className="titleWrapper">
                     <div className="iconBox">
-                        <FontAwesomeIcon  icon={FaSolid.faScrewdriverWrench}/>
+                        <FontAwesomeIcon icon={FaSolid.faScrewdriverWrench} />
                     </div>
-                    <h3 className="h3">My Skills</h3>
+                    <h3 className="h3">Tools Box</h3>
                 </div>
-                <ul className="skillList">
-                    {skillList.map((skill,index)=>{
-                        return(
-                            <li key={index} className="skillItem">
-
-                            </li>
-                        )
-                    })}
-                </ul>
-            </section> */}
+                {width >= 1024 ? <div>
+                    <div className="toolSectionContainer">
+                        <div className="h3 sectionTitle">
+                            Frontend
+                        </div>
+                        <ul className="toolBoxList">
+                            {toolBox.filter(item => item.category === 'Frontend').map((tool, index) => {
+                                return (
+                                    <li key={index} className="toolBoxItem">
+                                        <div className="toolImageContainer">
+                                            <img src={require(`../Asset/Resume/${tool.iconPath}`)} alt={tool.name}></img>
+                                            <div className="toolName">{tool.name}</div>
+                                        </div>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                    <div className="toolSectionContainer">
+                        <div className="h3 sectionTitle">
+                            Backend
+                        </div>
+                        <ul className="toolBoxList">
+                            {toolBox.filter(item => item.category === 'Backend').map((tool, index) => {
+                                return (
+                                    <li key={index} className="toolBoxItem">
+                                        <div className="toolImageContainer">
+                                            <img src={require(`../Asset/Resume/${tool.iconPath}`)} alt={tool.name}></img>
+                                            <div className="toolName">{tool.name}</div>
+                                        </div>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                    <div className="toolSectionContainer">
+                        <div className="h3 sectionTitle">
+                            Cloud
+                        </div>
+                        <ul className="toolBoxList">
+                            {toolBox.filter(item => item.category === 'Cloud').map((tool, index) => {
+                                return (
+                                    <li key={index} className="toolBoxItem">
+                                        <div className="toolImageContainer">
+                                            <img src={require(`../Asset/Resume/${tool.iconPath}`)} alt={tool.name}></img>
+                                            <div className="toolName">{tool.name}</div>
+                                        </div>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                    <div className="toolSectionContainer">
+                        <div className="h3 sectionTitle">
+                            Tools
+                        </div>
+                        <ul className="toolBoxList">
+                            {toolBox.filter(item => item.category === 'Tool').map((tool, index) => {
+                                return (
+                                    <li key={index} className="toolBoxItem">
+                                        <div className="toolImageContainer">
+                                            <img src={require(`../Asset/Resume/${tool.iconPath}`)} alt={tool.name}></img>
+                                            <div className="toolName">{tool.name}</div>
+                                        </div>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                </div> :
+                    <div className="carousel">
+                        <div className="track">
+                            {toolBox.map((tool, index) => {
+                                return (
+                                    <li key={index} className="toolBoxItem">
+                                        <div className="toolImageContainer">
+                                            <img src={require(`../Asset/Resume/${tool.iconPath}`)} alt={tool.name}></img>
+                                            <div className="toolName">{tool.name}</div>
+                                        </div>
+                                    </li>
+                                )
+                            })}
+                            {toolBox.map((tool, index) => {
+                                return (
+                                    <li key={index} className="toolBoxItem">
+                                        <div className="toolImageContainer">
+                                            <img src={require(`../Asset/Resume/${tool.iconPath}`)} alt={tool.name}></img>
+                                            <div className="toolName">{tool.name}</div>
+                                        </div>
+                                    </li>
+                                )
+                            })}
+                        </div>
+                    </div>}
+            </section>
         </div>
     )
 }

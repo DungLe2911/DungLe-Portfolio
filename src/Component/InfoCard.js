@@ -6,6 +6,7 @@ import * as FaRegular from '@fortawesome/free-regular-svg-icons';
 import * as FaBrand from '@fortawesome/free-brands-svg-icons';
 import {contactsList, socialList} from "../Asset/Data.js";
 import { useState } from "react";
+import DownloadBtn from "./DownloadBtn.js";
 const iconMap = {...FaSolid, ...FaRegular, ...FaBrand};
 export default function InfoCard(){
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -64,6 +65,10 @@ export default function InfoCard(){
                         )
                     })}
                 </ul>
+                <div className="seperator"></div>
+                <div style={{width: '100%', display:'flex', justifyContent: 'center', alignItems: 'center'}} >
+                    <DownloadBtn />
+                </div>
             </div>
         </div>
     );

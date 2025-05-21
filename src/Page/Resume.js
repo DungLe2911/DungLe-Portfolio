@@ -4,6 +4,7 @@ import "../Style/Resume.css"
 import { educationList, experienceList } from "../Asset/Data.js";
 import { toolBox } from "../Asset/Data.js";
 import { useEffect, useState } from "react";
+import DownloadBtn from "../Component/DownloadBtn.js";
 
 export default function Resume() {
     const [width, setWidth] = useState(window.innerWidth);
@@ -42,6 +43,7 @@ export default function Resume() {
                 </h2>
             </header>
             <section className="timeline">
+                {width < 1250 ? <div style={{marginBottom:'10px'}}><DownloadBtn /></div>:<></>}
                 <div className="titleWrapper">
                     <div className="iconBox">
                         <FontAwesomeIcon icon={FaSolid.faBookOpen} />

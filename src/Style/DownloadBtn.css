@@ -1,0 +1,21 @@
+.download-btn {
+    background: linear-gradient(90deg, #007BFF, #28a745); /* Blue */
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 200ms ease, border-color 200ms ease;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap; 
+}
+
+.download-btn > button {
+    color: white;
+}
+
+.download-btn:hover {
+    background: linear-gradient(90deg, #0056b3, #1e7e34); /* Green */
+    /* border-color: #1e7e34; */
+    transform: scale(1.03);
+}

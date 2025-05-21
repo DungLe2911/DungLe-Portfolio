@@ -372,8 +372,20 @@ const RecommendationLettersURL = [
 
 // -------------------------------------------- PROJECT PAGE-------------------------------------------------------
 
-
+const projectList = [
+    {
+        name: 'Portfolio',
+        status: 'Mantainence',
+        description:[
+            'aaaaaaaa','bbbbbbbbb'
+        ],
+        sourceCodeURL: null,
+        imageList: [],
+        deployedURL: 'birdieapp.co'
+    }
+]
 
 export {
     contactsList, socialList, navBarList, educationList, experienceList,
-    serviceList, TestimonialsList, RecommendationLettersURL, toolBox};
+    serviceList, TestimonialsList, RecommendationLettersURL, toolBox, 
+    projectList};

@@ -3,6 +3,8 @@ import "../Style/Contact.css"
 import { APIProvider, Map, AdvancedMarker, Pin, InfoWindow } from "@vis.gl/react-google-maps"
 import * as FaSolid from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState } from "react";
+import emailjs from '@emailjs/browser';
+import { toast } from "react-toastify";
 export default function Contact() {
     const position = {
         lat: 30.832,
@@ -14,14 +16,44 @@ export default function Contact() {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [message, setMessage] = useState("");
+    const [loading, setLoading] = useState(false);
+
 
     useEffect(() => {
         const isValid = name.trim() !== "" && email.trim() !== "" && message.trim() !== "";
         setDisabledSubmit(!isValid);
     }, [name, email, message]);
 
-    const handleSubmit = () => {
-        alert('hehehehe')
+    const handleSubmit = async () => {
+        try {
+            const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+            const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+            const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+            const body = {
+                email,
+                time: new Date().toLocaleString(),
+                title: `Contact Request via Portfolio – Dung Le`,
+                message,
+                name,
+                headers: {
+                    'X-Priority': '1', // High priority (1=High, 3=Normal, 5=Low)
+                    'X-MSMail-Priority': 'High',
+                    'Importance': 'High',
+                    'Priority': 'Urgent',
+                    'X-GM-Labels': 'Important,Inbox'
+                }
+            }
+            setLoading(true);
+            const response = await emailjs.send(serviceID, templateID, body, publicKey);
+            setLoading(false);
+            setEmail("");
+            setMessage("");
+            setName("");
+            toast.success("Message sent successfully! I'll get back to you soon.")
+        } catch (e) {
+            console.error("EmailJS Error:", e);
+            toast.error("Failed to send message. Please try again later.");
+        }
     }
 
     return (
@@ -47,9 +79,18 @@ export default function Contact() {
                     <input value={email} type="email" onChange={(e) => { setEmail(e.target.value) }} name="email" className="formInput" placeholder="Email address" required />
                 </div>
                 <textarea value={message} name="message" onChange={(e) => { setMessage(e.target.value) }} className="formInput" placeholder="Your Message" required />
-                <button className={ disabledSubmit ? 'formBtn' : 'formBtn valid'} onClick={handleSubmit} type="submit" disabled={disabledSubmit}>
-                    <FontAwesomeIcon icon={FaSolid.faPaperPlane} />
-                    <span>Send Message</span>
+                <button
+                    className={disabledSubmit || loading ? 'formBtn' : 'formBtn valid'}
+                    onClick={handleSubmit}
+                    type="submit"
+                    disabled={disabledSubmit || loading}
+                >
+                    {loading ? 'Sending...' : (
+                        <>
+                            <FontAwesomeIcon icon={FaSolid.faPaperPlane} />
+                            <span>Send Message</span>
+                        </>
+                    )}
                 </button>
             </section>
         </div>

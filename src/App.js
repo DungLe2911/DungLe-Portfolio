@@ -6,11 +6,13 @@ import Resume from "./Page/Resume";
 import './Style/App.css'
 import InfoCard from "./Component/InfoCard";
 import NavBar from "./Component/NavBar";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <div className="App">
       <InfoCard />
+      <ToastContainer />
       <div className="contentArea">
         <NavBar />
         <Routes>

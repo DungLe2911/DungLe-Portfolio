@@ -105,7 +105,7 @@ const experienceList = [
             "Followed [RESTful API] guidelines on backend application development",
             "Tested each of the unit of backend application with [JUnit] and [Mockito], and [JaCoCo] for code coverage",
             "Utilized SpringBoot libraries such [Spring Security], [Cloud], [AOP], etc. and as well as maven for dependencies",
-            "Applied different design pattern such as [Singleton, Factory, Observer, Builder, Proxy]"
+            "Applied Multiple different design patterns such as [Singleton], [Factory], [Observer], [Builder], [Proxy]"
         ]
     },
     {
@@ -114,7 +114,7 @@ const experienceList = [
         title: "Front End Developer",
         bulletPoints:[
             "Built a frontend for capture the flag application that aims toward late middle school and high schoolers",
-            "Developed the frontend application using [HTML, CSS, and Javascript]  with ReactJS Framework for a SPA",
+            "Developed the frontend application using [HTML, CSS, and Javascript] with [ReactJS] Framework for a SPA",
             "Tested the interaction between the elements by using [TestCafe]",
             "Collaborated with the team members on the project through [GitHub]",
             "Deployed the application at ctf.cyberliteracyforall.com and team information at www.cyberliteracyforall.com",

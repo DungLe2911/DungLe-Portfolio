@@ -84,7 +84,7 @@ const experienceList = [
         time: "Dec 2022 - Present",
         title: "Middle Room Inventory Control Specialist and Data Analysis Engineer",
         bulletPoints:[
-            "Developed data visualization tools using Power BI and Excel for production monitoring and tracking",
+            "Developed data visualization tools using [Power BI] and [Excel] for production monitoring and tracking",
             "Executed data processing for better accuracy on daily production report",
             "Diagnosed and resolved machines malfunctions to ensure operational efficiency",
             "Traced product lifecycle from initial processing to final product output upon request",
@@ -98,14 +98,14 @@ const experienceList = [
         time: "Feb 2022 - Dec 2022",
         title: "Software Developer Engineer",
         bulletPoints:[
-            "Worked with both NoSQL Database (MongoDB) and SQL Database(MySQL) to store and retrieve data",
-            "Implemented Microservice architecture on the applications into components to process requests",
-            "Integrated Hibernate on each of the core services to store and retrieved data from database",
-            "Used Feign Client or RestTemplate to achieve communicate between core services",
-            "Followed RESTful API guidelines on backend application development",
-            "Tested each of the unit of backend application with JUnit and Mockito, and JaCoCo for code coverage",
-            "Utilized SpringBoot libraries such Spring Security, Cloud, AOP, etc. and as well as maven for dependencies",
-            "Applied different design pattern such as Singleton, Factory, Observer, Builder, Proxy"
+            "Worked with both [NoSQL Database (MongoDB)] and [SQL Database(MySQL)] to store and retrieve data",
+            "Implemented [Microservice] architecture on the applications into components to process requests",
+            "Integrated [Hibernate] on each of the core services to store and retrieved data from database",
+            "Used [Feign Client] or [RestTemplate] to achieve communicate between core services",
+            "Followed [RESTful API] guidelines on backend application development",
+            "Tested each of the unit of backend application with [JUnit] and [Mockito], and [JaCoCo] for code coverage",
+            "Utilized SpringBoot libraries such [Spring Security], [Cloud], [AOP], etc. and as well as maven for dependencies",
+            "Applied different design pattern such as [Singleton, Factory, Observer, Builder, Proxy]"
         ]
     },
     {
@@ -114,13 +114,13 @@ const experienceList = [
         title: "Front End Developer",
         bulletPoints:[
             "Built a frontend for capture the flag application that aims toward late middle school and high schoolers",
-            "Developed the frontend application using HTML, CSS, and Javascript  with ReactJS Framework for a SPA",
-            "Tested the interaction between the elements by using TestCafe and Playwright",
-            "Collaborated with the team members on the project through GitHub",
+            "Developed the frontend application using [HTML, CSS, and Javascript]  with ReactJS Framework for a SPA",
+            "Tested the interaction between the elements by using [TestCafe]",
+            "Collaborated with the team members on the project through [GitHub]",
             "Deployed the application at ctf.cyberliteracyforall.com and team information at www.cyberliteracyforall.com",
-            "Integrated the frontend application with a terminal that runs in a Kubernetes cluster",
-            "Utilized Axios libraries for fetch data and send request between frontend and backend application",
-            "Applied JWT guideline along with Oauth on the Frontend application for user Single Sign On (SSO)"
+            "Integrated the frontend application with a terminal that runs in a [Kubernetes] cluster",
+            "Utilized [Axios] libraries for fetch data and send request between frontend and backend application",
+            "Applied [JWT] guideline along with [Oauth] on the Frontend application for user Single Sign On (SSO)"
         ]
     },
     {

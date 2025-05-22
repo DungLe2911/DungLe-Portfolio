@@ -89,6 +89,7 @@
     font-weight: var(--fw-200);
     line-height: 1.6;
     padding-left: 30px;
+    white-space: normal; 
 }
 
 .experienceBulletPoint::before {
@@ -218,6 +219,14 @@
 
 .track:hover {
     animation-play-state: paused;
+}
+
+.highlight {
+    /* background-color: yellow; */
+    font-weight: bold;
+    display: inline;
+    white-space: nowrap;
+    color: hsl(30, 100%, 70%);
 }
 
 @media (min-width: 580px) {

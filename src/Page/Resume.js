@@ -35,6 +35,23 @@ export default function Resume() {
         if (months > 0) result.push(`${months} month${months > 1 ? "s" : ""}`);
         return result.join(", ");
     }
+
+    function highlightKeywords(text) {
+        const parts = text.split(/(\[.*?\])/g); // split and keep brackets
+        return parts.map((part, index) => {
+            if (part.startsWith('[') && part.endsWith(']')) {
+                return (
+                    <span key={index} className="highlight">
+                        {part.slice(1, -1)}
+                    </span>
+                );
+            }
+            return part;
+        });
+    }
+
+
+
     return (
         <div className="pageContainer">
             <header>
@@ -43,7 +60,7 @@ export default function Resume() {
                 </h2>
             </header>
             <section className="timeline">
-                {width < 1250 ? <div style={{marginBottom:'10px'}}><DownloadBtn /></div>:<></>}
+                {width < 1250 ? <div style={{ marginBottom: '10px' }}><DownloadBtn /></div> : <></>}
                 <div className="titleWrapper">
                     <div className="iconBox">
                         <FontAwesomeIcon icon={FaSolid.faBookOpen} />
@@ -86,7 +103,7 @@ export default function Resume() {
                                     {experience.bulletPoints.map((point, index) => {
                                         return (
                                             <li key={index} className="experienceBulletPoint">
-                                                {point}
+                                                {highlightKeywords(point)}
                                             </li>
                                         )
                                     })}

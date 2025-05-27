@@ -76,7 +76,7 @@ export default function Resume() {
                                 </h3>
                                 {/* <span className="timelineText" style={{fontWeight: 700}}>{education.period}</span> */}
                                 <h4 className="h4 timelineText">{education.degree}</h4>
-                                <p className="timelineText">GPA: {education.GPA}</p>
+                                {/* <p className="timelineText">GPA: {education.GPA}</p> */}
                             </li>
                         )
                     })}
@@ -97,7 +97,7 @@ export default function Resume() {
                                 <h4 className="h4 timelineItemTitle">
                                     {experience.title}
                                 </h4>
-                                <h5 className="h5 timelineText" style={{ fontWeight: 700 }}>company: {experience.company}</h5>
+                                <h5 className="h5 timelineText" style={{ fontWeight: 700 }}>{experience.company}</h5>
                                 <h5 className="h5 timelineText">{experience.time} • {getDuration(experience.time)}</h5>
                                 <ol className="experienceList">
                                     {experience.bulletPoints.map((point, index) => {

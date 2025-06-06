@@ -69,12 +69,6 @@ const educationList = [
         school: "Washington State University",
         degree: "Bachelor of Science in Computer Science",
         GPA: 3.6
-    },
-    {
-        period: "2015 - 2018",
-        school: "Tacoma Community College",
-        degree: "Associate of Science in Computer Science",
-        GPA: 3.6
     }
 ]
 
@@ -82,15 +76,14 @@ const experienceList = [
     {
         company: "South Georgia Pecan Co.",
         time: "Dec 2022 - Present",
-        title: "Data Analysis Engineer",
+        title: "Data Engineer",
         bulletPoints:[
             "Developed data visualization tools using [Power BI] and [Excel] for production monitoring and tracking",
-            "Executed data processing for better accuracy on daily production report",
-            "Diagnosed and resolved machines malfunctions to ensure operational efficiency",
-            "Traced product lifecycle from initial processing to final product output upon request",
-            "Managed and organized daily product logs for future accessibility",
-            "Collected and analyzed sample requests for potential customers",
-            "Inspected and validate incoming product from other facilities to ensure compliance with processing standard"
+            "Wrote [SQL queries] to clean up data on Microsoft SQL Server and pull data or daily updates ",
+            "[Traced product lifecycle from initial processing to final product] output upon request",
+            "[Automated and optimized data cleansing pipelines,] cutting daily correction time by [40%] and significantly improving the reliability of production and inventory reports",
+            "[Built forecasting models using cleaned historical data] to predict production trends and raw material needs, improving planning accuracy and reducing overstock by 15%.",
+            "[Designed and maintained real-time monitoring dashboards in Power BI], enabling instant visibility into production flow and early detection of bottlenecks, which supported timely decision-making and process adjustments."
         ]
     },
     {
@@ -98,14 +91,13 @@ const experienceList = [
         time: "Feb 2022 - Dec 2022",
         title: "Software Developer Engineer",
         bulletPoints:[
-            "Worked with both [NoSQL Database (MongoDB)] and [SQL Database(MySQL)] to store and retrieve data",
-            "Implemented [Microservice] architecture on the applications into components to process requests",
-            "Integrated [Hibernate] on each of the core services to store and retrieved data from database",
-            "Used [Feign Client] or [RestTemplate] to achieve communicate between core services",
-            "Followed [RESTful API] guidelines on backend application development",
-            "Tested each of the unit of backend application with [JUnit] and [Mockito], and [JaCoCo] for code coverage",
-            "Utilized SpringBoot libraries such [Spring Security], [Cloud], [AOP], etc. and as well as maven for dependencies",
-            "Applied Multiple different design patterns such as [Singleton], [Factory], [Observer], [Builder], [Proxy]"
+            "Designed and implemented [microservices] using [Java], [Spring Boot], and [RESTful API] principles",
+            "Utilized [Hibernate] for database interactions with [DynamoDB] and [MySQL]",
+            "Established inter-services communication using [Feign Client] and [AWS SNS].",
+            "Achieved [95% code coverage] through comprehensive unit testing with [JUnit] and [Mockito], validated via [JaCoCo]",
+            "Applied Multiple different design patterns such as [Singleton], [Factory], [Observer], [Builder], [Proxy]",
+            "Managed IAM roles and AWS services (DynamoDB, SQS, Secret Manager, etc.).",
+            "Maintained the code using [GitLab] and set up [CI/CD] pipeline to [dev/preprod/QA] deployment on [AWS Code Deploy]"
         ]
     },
     {
@@ -113,12 +105,12 @@ const experienceList = [
         time: "Jan 2021 - Dec 2021",
         title: "Front End Developer",
         bulletPoints:[
-            "Developed the frontend application using [HTML, CSS, and Javascript] with [ReactJS] Framework for a SPA",
-            "Tested the interaction between the elements by using [TestCafe]",
-            "Collaborated with the team members on the project through [GitHub]",
-            "Integrated the frontend application with a terminal that runs in a [Kubernetes] cluster",
-            "Utilized [Axios] libraries for fetch data and send request between frontend and backend application",
-            "Applied [JWT] guideline along with [Oauth] on the Frontend application for user [Single Sign On (SSO)]"
+            "Responsible for the frontend part of the project by using [ReactJS] Framework with functional component.",
+            "Utilized Axios libraries for retrieving data and send request between frontend and backend application.",
+            "Integrated the frontend application with a terminal that runs in a [Kubernetes] cluster.",
+            "Tested the interaction between the elements by using [TestCafe] Framework for unit testing.",
+            "Collaborated with the team members on the project through [GitHub].",
+            "Responsible for the deploying process of the frontend application through [Heroku] Platform.",
         ]
     },
     {
@@ -129,7 +121,7 @@ const experienceList = [
             "[Benchmarked different CNN] models under different environment settings",
             "Performed matrix multiplication using already existed library such as [OpenBLAS], [BLIS], [SpGeMM]",
             "Analyzed the result for optimization based on inference time, memory usage",
-            "Implemented additional C/C++ code that helps with generating new matrices for the benchmarking the CNN models",
+            "Implemented additional [C/C++] code that helps with generating new matrices for the benchmarking the CNN models",
         ]
     },
     {

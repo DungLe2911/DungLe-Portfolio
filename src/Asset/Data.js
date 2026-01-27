@@ -19,6 +19,14 @@ import portfolio3 from '../Asset/Projects/Portfolio/portfolio3.png';
 import portfolio4 from '../Asset/Projects/Portfolio/portfolio4.png';
 import portfolio5 from '../Asset/Projects/Portfolio/portfolio5.png';
 import portfolio6 from '../Asset/Projects/Portfolio/portfolio6.png';
+import findbud1 from '../Asset/Projects/FinBud AI/finbud1.png';
+import findbud2 from '../Asset/Projects/FinBud AI/finbud2.png';
+import findbud3 from '../Asset/Projects/FinBud AI/finbud3.png';
+import findbud4 from '../Asset/Projects/FinBud AI/finbud4.jpg';
+import findbud5 from '../Asset/Projects/FinBud AI/finbud5.jpg';
+import findbud6 from '../Asset/Projects/FinBud AI/finbud6.jpg';
+import findbud7 from '../Asset/Projects/FinBud AI/finbud7.jpg';
+import findbud8 from '../Asset/Projects/FinBud AI/finbud8.png';
 
 // -------------------------------------------- NAV BAR-------------------------------------------------------
 const contactsList = [
@@ -388,37 +396,6 @@ const RecommendationLettersURL = [
 // -------------------------------------------- PROJECT PAGE-------------------------------------------------------
 
 const projectList = [
-    {
-        name: "Birdie AI",
-        description: [
-            "AI nutrition chatbot built with Next.js and OpenAI API for meal planning and food recommendations.",
-            "Integrated Stripe subscriptions, JWT authentication, and AWS Lambda backend APIs."
-        ],
-        sourceCodeURL: "https://github.com/yourname/birdie-ai",
-        imageList: [
-            {
-                image: birdie1,
-                legend: "Birdie AI - Chat Interface"
-
-            },
-            {
-                image: birdie1,
-                legend: "Birdie AI - Chat Interface"
-
-            },
-            {
-                image: birdie1,
-                legend: "Birdie AI - Chat Interface"
-
-            },
-            {
-                image: birdie1,
-                legend: "Birdie AI - Chat Interface"
-            }
-        ],
-        deployedURL: "https://birdieapp.co",
-        category: "Full Stack / AI"
-    },
     //Leinland Project
     {
         name: "Leinland Project",
@@ -431,11 +408,16 @@ const projectList = [
         sourceCodeURL: null,
         imageList: [
             { image: leinland1, legend: "Homepage" },
+            { image: leinland1, legend: "Dashboard" },
             { image: leinland2, legend: "People Management Interface" },
             { image: leinland3, legend: "Machine Setting Interface" },
             { image: leinland4, legend: "Digital form - Quality Check" },
             { image: leinland5, legend: "Digital form - Quality Check History Submission" },
             { image: leinland6, legend: "Supervisor Verification" },
+            { image: leinland6, legend: "Maintenance Work Order Request" },
+            { image: leinland6, legend: "Maintenance Request Live Screen" },
+            { image: leinland6, legend: "Management team email Inivation" },
+            { image: leinland6, legend: "OTP forget Password" },
         ],
         deployedURL: null,
         category: "Enterprise / Internal Tools",
@@ -490,11 +472,11 @@ const projectList = [
 
         sourceCodeURL: "https://github.com/DungLe2911/DungLe-Portfolio",
         imageList: [
-            {image: portfolio1, legend: "Homepage - Desktop View"},
-            {image: portfolio2, legend: "Resume Page - Desktop View"},
-            {image: portfolio3, legend: "Contact Page - Desktop View"},
-            {image: portfolio4, legend: "Homepage - Mobile View"},
-            {image: portfolio6, legend: "Homepage - Tablet View"},
+            { image: portfolio1, legend: "Homepage - Desktop View" },
+            { image: portfolio2, legend: "Resume Page - Desktop View" },
+            { image: portfolio3, legend: "Contact Page - Desktop View" },
+            { image: portfolio4, legend: "Homepage - Mobile View" },
+            { image: portfolio6, legend: "Homepage - Tablet View" },
         ],
         deployedURL: "https://dungle2911.github.io/DungLe-Portfolio/",
         category: "Web Development",
@@ -509,7 +491,100 @@ const projectList = [
             "React-Toastify",
             "OpenLayers",
         ]
-    }
+    },
+    //Birdie AI Project
+    {
+        name: "Birdie AI",
+        description: [
+            "AI nutrition chatbot built with Next.js and OpenAI API for meal planning and food recommendations.",
+            "Integrated Stripe subscriptions, JWT authentication, and AWS Lambda backend APIs."
+        ],
+        sourceCodeURL: "https://github.com/yourname/birdie-ai",
+        imageList: [
+            {
+                image: birdie1,
+                legend: "Birdie AI - Chat Interface"
+
+            },
+            {
+                image: birdie1,
+                legend: "Birdie AI - Chat Interface"
+
+            },
+            {
+                image: birdie1,
+                legend: "Birdie AI - Chat Interface"
+
+            },
+            {
+                image: birdie1,
+                legend: "Birdie AI - Chat Interface"
+            }
+        ],
+        deployedURL: "https://birdieapp.co",
+        category: "Full Stack / AI"
+    },
+    //FinBud AI Project
+    {
+        name: "FinBud AI",
+        company: "Independent Project",
+        description: [
+            "FinBud is an AI-powered FinTech learning platform built using Vue.js and the OpenAI API, designed to help beginners understand financial markets in an interactive and practical way. It allows users to practice stock and cryptocurrency trading, learn how to read market charts, explore specific stocks of interest, and analyze key market metrics such as open and close prices, market capitalization, trading volume, and 52-week high and low data. To reinforce learning, the platform includes AI-generated quizzes and guided explanations that adapt to different knowledge levels.",
+            "The application is designed with a mobile-first approach, targeting users who prefer learning on the go. This enables users to access financial education anytime and anywhere, whether commuting, taking short breaks, or casually exploring market trends. By combining accessibility with hands-on learning tools and real-time market insights, FinBud lowers the barrier to entry for financial literacy and FinTech education."
+        ],
+        sourceCodeURL: "https://github.com/finbud2024/Finbud",
+        imageList: [
+            {
+                image: findbud1,
+                legend: "Landing Page"
+
+            },
+            {
+                image: findbud2,
+                legend: "Login and Signup Page"
+
+            },
+            {
+                image: findbud3,
+                legend: "Chatbot Interface"
+
+            },
+            {
+                image: findbud4,
+                legend: "NVDIA Chart Analysis"
+            },
+            {
+                image: findbud5,
+                legend: "NVDIA Candle Stick Chart"
+            },
+            {
+                image: findbud6,
+                legend: "AI Chatbot Analysis"
+            },
+            {
+                image: findbud7,
+                legend: "AI Chatbot Analysis"
+            },
+            {
+                image: findbud8,
+                legend: "Stock Details Page"
+            }
+        ],
+        deployedURL: "https://finbud.ai",
+        category: "Full Stack / AI",
+        techStack: [
+            "NodeJS",
+            "VueJS",
+            "OpenAI API",
+            "Stripe API",
+            "JWT Authentication",
+            "Netlify Serverless Functions",
+            "OAuth 2.0",
+            "ExpressJS",
+            "MongoDB",
+            "Alpha Vantage API"
+        ]
+    },
 ]
 
 export {

@@ -32,6 +32,10 @@ export default function Contact() {
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
 
+    useEffect(() => {
+        document.title = "Contact - Dung Hoang Le";
+    }, []);
+
 
     useEffect(() => {
         const isValid = name.trim() !== "" && email.trim() !== "" && message.trim() !== "";

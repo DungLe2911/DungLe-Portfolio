@@ -10,6 +10,7 @@ export default function Resume() {
     const [width, setWidth] = useState(window.innerWidth);
 
     useEffect(() => {
+        document.title = "Resume - Dung Hoang Le";
         const handleResize = () => setWidth(window.innerWidth);
 
         window.addEventListener("resize", handleResize);

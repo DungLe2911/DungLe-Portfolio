@@ -61,6 +61,7 @@ export default function ProjectCard(props) {
                         height: "194px",
                         objectFit: "cover",
                         transition: "transform 0.3s ease",
+                        border: "1px solid #000",
                     }}
                 />
             </div>

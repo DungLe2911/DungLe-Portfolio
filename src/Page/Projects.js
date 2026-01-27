@@ -23,6 +23,8 @@ export default function Project() {
 
 
     useEffect(() => {
+        document.title = "Projects - Dung Hoang Le";
+
         const handleResize = () => setWidth(window.innerWidth);
 
         window.addEventListener("resize", handleResize);

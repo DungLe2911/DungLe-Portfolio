@@ -1,17 +1,31 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../Style/Contact.css"
-import { APIProvider, Map, AdvancedMarker, Pin, InfoWindow } from "@vis.gl/react-google-maps"
 import * as FaSolid from '@fortawesome/free-solid-svg-icons'
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
 import { toast } from "react-toastify";
+
+
+import "ol/ol.css";
+import OLMap from "ol/Map";
+import View from "ol/View";
+import TileLayer from "ol/layer/Tile";
+import OSM from "ol/source/OSM";
+import { fromLonLat } from "ol/proj";
+import Feature from "ol/Feature";
+import Point from "ol/geom/Point";
+import VectorSource from "ol/source/Vector";
+import VectorLayer from "ol/layer/Vector";
+import {MouseWheelZoom, defaults as defaultInteractions } from "ol/interaction";
+import { Style, Icon } from "ol/style";
+
 export default function Contact() {
     const position = {
         lat: 30.832,
         lng: -83.279
     }
-    const mapAPIKEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-    const mapID = process.env.REACT_APP_GOOGLE_MAPS_ID;
+    const mapContainerRef = useRef(null);
+    const mapRef = useRef(null);
     const [disabledSubmit, setDisabledSubmit] = useState(true);
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
@@ -23,6 +37,67 @@ export default function Contact() {
         const isValid = name.trim() !== "" && email.trim() !== "" && message.trim() !== "";
         setDisabledSubmit(!isValid);
     }, [name, email, message]);
+
+    useEffect(() => {
+        if (!mapContainerRef.current || mapRef.current) return;
+
+        const center = fromLonLat([position.lng, position.lat]);
+
+        // Marker feature
+        const marker = new Feature({
+            geometry: new Point(center),
+        });
+
+        const markerLayer = new VectorLayer({
+            source: new VectorSource({ features: [marker] }),
+            style: new Style({
+                image: new Icon({
+                    // simple inline SVG marker (no extra files needed)
+                    src:
+                        'data:image/svg+xml;utf8,' +
+                        encodeURIComponent(`
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+                <path d="M16 1C10.5 1 6 5.5 6 11c0 7.5 10 20 10 20s10-12.5 10-20C26 5.5 21.5 1 16 1z" fill="#d00"/>
+                <circle cx="16" cy="11" r="4" fill="#fff"/>
+              </svg>
+            `),
+                    anchor: [0.5, 1],
+                    scale: 1,
+                }),
+            }),
+        });
+
+        const map = new OLMap({
+            target: mapContainerRef.current,
+            layers: [
+                new TileLayer({
+                    source: new OSM(),
+                }),
+                markerLayer,
+            ],
+            view: new View({
+                center,
+                zoom: 11,
+            }),
+            interactions: defaultInteractions({
+                mouseWheelZoom: false,
+            }).extend([
+                new MouseWheelZoom({
+                    duration: 100,
+                    timeout: 25,
+                    useAnchor: true,
+                    constrainResolution: true,
+                }),
+            ])
+        });
+
+        mapRef.current = map;
+
+        return () => {
+            map.setTarget(undefined);
+            mapRef.current = null;
+        };
+    }, [position.lat, position.lng]);
 
     const handleSubmit = async () => {
         try {
@@ -45,14 +120,16 @@ export default function Contact() {
             }
             setLoading(true);
             const response = await emailjs.send(serviceID, templateID, body, publicKey);
-            setLoading(false);
             setEmail("");
             setMessage("");
             setName("");
+            toast.dismiss();
             toast.success("Message sent successfully! I'll get back to you soon.")
         } catch (e) {
             console.error("EmailJS Error:", e);
             toast.error("Failed to send message. Please try again later.");
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -65,11 +142,11 @@ export default function Contact() {
             </header>
             <section className="mapbox">
                 <figure>
-                    {/* <APIProvider apiKey={mapAPIKEY}>
-                        <Map zoom={11} center={position} mapId={mapID}>
-                            <AdvancedMarker position={position}></AdvancedMarker>
-                        </Map>
-                    </APIProvider> */}
+                    {/* OpenLayers mounts into this div */}
+                    <div
+                        ref={mapContainerRef}
+                        style={{ width: "100%", height: "300px", borderRadius: "12px", overflow: "hidden" }}
+                    />
                 </figure>
             </section>
             <section className="contactForm">

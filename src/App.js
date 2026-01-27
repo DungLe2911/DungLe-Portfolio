@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <InfoCard />
-      <ToastContainer />
+      <ToastContainer closeOnClick limit={1} />
       <div className="contentArea">
         <NavBar />
         <Routes>

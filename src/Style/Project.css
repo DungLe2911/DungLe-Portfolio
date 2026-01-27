@@ -1,4 +1,4 @@
-.pageContainer{
+.pageContainer {
     background: var(--eerie-black-2);
     border: 1px solid var(--jet);
     border-radius: 20px;
@@ -33,6 +33,128 @@
     margin-bottom: 10px;
 }
 
+.filterItem {
+    color: white;
+}
+
+.filterItem:hover {
+    cursor: pointer;
+}
+
+.filterList {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+    padding-left: 5px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cardComponent {
+    background: var(--eerie-black-3);
+    border: 1px solid var(--jet);
+    box-shadow: var(--shadow-2);
+
+    position: relative;
+    /* ✅ required for overlay positioning */
+    overflow: hidden;
+    /* ✅ keeps overlay inside card */
+}
+
+.cardComponent {
+    position: relative;
+    overflow: hidden;
+}
+
+.cardComponent:hover {
+    cursor: pointer;
+}
+
+/* ✅ full dim overlay */
+.cardOverlayBg {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    transition: opacity 200ms ease;
+    pointer-events: none;
+}
+
+/* ✅ center icon */
+.cardOverlayIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    background: rgba(50, 50, 50, 0.85);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transition: opacity 200ms ease;
+}
+
+.cardOverlayIconSvg {
+    color: white;
+}
+
+/* ✅ show overlay on hover */
+.cardComponent:hover .cardOverlayBg,
+.cardComponent:hover .cardOverlayIcon {
+    opacity: 1;
+}
+
+
+/* .carousel .slider {
+    display: flex !important;
+} */
+
+/* prevent each slide from taking full width */
+/* .carousel .slide {
+    flex: 0 0 auto !important;
+} */
+
+/* (optional) normalize image size so it looks like a row */
+.carousel .slide img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.carousel .slide .legend{
+    bottom: 10px !important;
+}
+
+.modalBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    /* prevents full screen on small devices */
+    max-height: 90vh;
+    overflow-y: auto;
+
+    background: white;
+    /* or use your theme variable */
+    border: 2px solid #000;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.activeFilter {
+    color: hsl(45, 100%, 72%);
+}
+
 @media (min-width: 580px) {
     .pageContainer {
         width: 520px;
@@ -50,6 +172,10 @@
         width: 40px;
         height: 5px;
     }
+
+    .modalBox {
+        width: 80%;
+    }
 }
 
 @media (min-width: 768px) {
@@ -60,6 +186,10 @@
     .articleTitle {
         padding-bottom: 20px;
     }
+
+    .projectList {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 
@@ -68,6 +198,14 @@
         width: 950px;
         box-shadow: var(--shadow-5);
     }
+
+    .projectList {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .modalBox {
+        width: 70%;
+    }
 }
 
 @media (min-width: 1250px) {
@@ -75,6 +213,8 @@
         width: auto;
         min-height: 100%;
     }
+
+    .modalBox {
+        width: 30%;
+    }
 }
-
-

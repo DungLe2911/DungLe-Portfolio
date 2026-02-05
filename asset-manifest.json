@@ -1,10 +1,9 @@
 {
   "files": {
     "main.css": "/DungLe-Portfolio/static/css/main.a36e3c53.css",
-    "main.js": "/DungLe-Portfolio/static/js/main.db309cf0.js",
+    "main.js": "/DungLe-Portfolio/static/js/main.8e465e36.js",
     "static/media/birdie1.jpg": "/DungLe-Portfolio/static/media/birdie1.75257b05db74b691db87.jpg",
     "static/media/leinland1.jpg": "/DungLe-Portfolio/static/media/leinland1.75257b05db74b691db87.jpg",
-    "static/media/pdf.worker.min.mjs": "/DungLe-Portfolio/static/media/pdf.worker.min.65fa70d44dbc3056cf17.mjs",
     "static/media/portfolio1.png": "/DungLe-Portfolio/static/media/portfolio1.2c2ba9a1695d207cc951.png",
     "static/media/portfolio3.png": "/DungLe-Portfolio/static/media/portfolio3.c7f15816778dbf317fcb.png",
     "static/media/portfolio2.png": "/DungLe-Portfolio/static/media/portfolio2.9a458a9608e9bd71a5a5.png",
@@ -62,10 +61,10 @@
     "static/media/Leetcode.svg": "/DungLe-Portfolio/static/media/Leetcode.006052f720389e44275dd8952f5f325a.svg",
     "index.html": "/DungLe-Portfolio/index.html",
     "main.a36e3c53.css.map": "/DungLe-Portfolio/static/css/main.a36e3c53.css.map",
-    "main.db309cf0.js.map": "/DungLe-Portfolio/static/js/main.db309cf0.js.map"
+    "main.8e465e36.js.map": "/DungLe-Portfolio/static/js/main.8e465e36.js.map"
   },
   "entrypoints": [
     "static/css/main.a36e3c53.css",
-    "static/js/main.db309cf0.js"
+    "static/js/main.8e465e36.js"
   ]
 }

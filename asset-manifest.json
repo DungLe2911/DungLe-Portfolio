@@ -1,21 +1,18 @@
 {
   "files": {
     "main.css": "/DungLe-Portfolio/static/css/main.a36e3c53.css",
-    "main.js": "/DungLe-Portfolio/static/js/main.d626c73f.js",
+    "main.js": "/DungLe-Portfolio/static/js/main.db309cf0.js",
     "static/media/birdie1.jpg": "/DungLe-Portfolio/static/media/birdie1.75257b05db74b691db87.jpg",
     "static/media/leinland1.jpg": "/DungLe-Portfolio/static/media/leinland1.75257b05db74b691db87.jpg",
     "static/media/pdf.worker.min.mjs": "/DungLe-Portfolio/static/media/pdf.worker.min.65fa70d44dbc3056cf17.mjs",
     "static/media/portfolio1.png": "/DungLe-Portfolio/static/media/portfolio1.2c2ba9a1695d207cc951.png",
     "static/media/portfolio3.png": "/DungLe-Portfolio/static/media/portfolio3.c7f15816778dbf317fcb.png",
     "static/media/portfolio2.png": "/DungLe-Portfolio/static/media/portfolio2.9a458a9608e9bd71a5a5.png",
-    "static/media/SmartEZ_Letter.pdf": "/DungLe-Portfolio/static/media/SmartEZ_Letter.7755982c43edf5507013.pdf",
     "static/media/Jenkins.png": "/DungLe-Portfolio/static/media/Jenkins.cdb225fb4fe3464b9f8a.png",
     "static/media/portfolio6.png": "/DungLe-Portfolio/static/media/portfolio6.c1897867367f6d14516e.png",
     "static/media/portfolio5.png": "/DungLe-Portfolio/static/media/portfolio5.aa4fd394aabd870bbeb5.png",
     "static/media/portfolio4.png": "/DungLe-Portfolio/static/media/portfolio4.2f2c77607c57da3f6522.png",
-    "static/media/Freddy_Sublet.pdf": "/DungLe-Portfolio/static/media/Freddy_Sublet.1fec65aec5c4c40f07d5.pdf",
     "static/media/finbud5.jpg": "/DungLe-Portfolio/static/media/finbud5.7a9bce1dd29679eb9f58.jpg",
-    "static/media/HiPDAC_Letter.pdf": "/DungLe-Portfolio/static/media/HiPDAC_Letter.d4c8c83b7d36e156c50e.pdf",
     "static/media/Dung Le Resume.pdf": "/DungLe-Portfolio/static/media/Dung Le Resume.a668d50f72fb14709ea8.pdf",
     "static/media/finbud2.png": "/DungLe-Portfolio/static/media/finbud2.b07c1a291eaecf10f098.png",
     "static/media/finbud6.jpg": "/DungLe-Portfolio/static/media/finbud6.896e103b953ac67adc9d.jpg",
@@ -25,7 +22,6 @@
     "static/media/GitHub.png": "/DungLe-Portfolio/static/media/GitHub.56930c2160fe0df7dda9.png",
     "static/media/ReactJS.png": "/DungLe-Portfolio/static/media/ReactJS.3f423fdb80ff9a832382.png",
     "static/media/finbud8.png": "/DungLe-Portfolio/static/media/finbud8.85a3fb6046329a2cf7a1.png",
-    "static/media/Nathan_Smith.pdf": "/DungLe-Portfolio/static/media/Nathan_Smith.9ff37fdc111f71c531da.pdf",
     "static/media/Docker.png": "/DungLe-Portfolio/static/media/Docker.7281de84f757054a2336.png",
     "static/media/finbud7.jpg": "/DungLe-Portfolio/static/media/finbud7.6d316b531f8c9c33f519.jpg",
     "static/media/finbud4.jpg": "/DungLe-Portfolio/static/media/finbud4.a3b53c00f7f00c9f23c4.jpg",
@@ -66,10 +62,10 @@
     "static/media/Leetcode.svg": "/DungLe-Portfolio/static/media/Leetcode.006052f720389e44275dd8952f5f325a.svg",
     "index.html": "/DungLe-Portfolio/index.html",
     "main.a36e3c53.css.map": "/DungLe-Portfolio/static/css/main.a36e3c53.css.map",
-    "main.d626c73f.js.map": "/DungLe-Portfolio/static/js/main.d626c73f.js.map"
+    "main.db309cf0.js.map": "/DungLe-Portfolio/static/js/main.db309cf0.js.map"
   },
   "entrypoints": [
     "static/css/main.a36e3c53.css",
-    "static/js/main.d626c73f.js"
+    "static/js/main.db309cf0.js"
   ]
 }

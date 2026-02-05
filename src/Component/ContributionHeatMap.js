@@ -5,6 +5,7 @@ export default function ContributionHeatmap({
     data = {},
 }) {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [visibleMonths, setVisibleMonths] = useState(0);
 
     useEffect(() => {
         const handleResize = () => setWindowWidth(window.innerWidth);
@@ -13,6 +14,19 @@ export default function ContributionHeatmap({
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    useEffect(() => {
+        if (windowWidth < 580) {
+            setVisibleMonths(4);
+        } else if (windowWidth < 768) {
+            setVisibleMonths(6);
+        } else if (windowWidth < 1024) {
+            setVisibleMonths(8);
+        } else if (windowWidth < 1250) {
+            setVisibleMonths(10);
+        } else {
+            setVisibleMonths(11);
+        }
+    }, [windowWidth]);
 
 
     const heatmapData = useMemo(() => {
@@ -90,8 +104,6 @@ export default function ContributionHeatmap({
     const totalContributions = useMemo(() => {
         return Object.values(data).reduce((sum, count) => sum + count, 0);
     }, [data]);
-
-    const visibleMonths = windowWidth <= 425 ? 4 : windowWidth <= 768 ? 8 : 11;
 
     const filteredHeatmapData = useMemo(() => {
         if (!heatmapData.length) return [];

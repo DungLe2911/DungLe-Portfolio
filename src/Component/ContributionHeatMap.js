@@ -70,7 +70,7 @@ export default function ContributionHeatmap({
 
         return weeks;
     }, [data]);
-    
+
     const getColor = (count) => {
         if (count === 0) return '#1e293b'; // gray-800
         if (count <= 2) return '#14532d'; // green-900
@@ -80,6 +80,7 @@ export default function ContributionHeatmap({
     };
 
     const months = useMemo(() => {
+        if (!heatmapData.length) return [];  // Add this line
         const monthLabels = [];
         let lastMonth = -1;
 

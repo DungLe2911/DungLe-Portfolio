@@ -117,7 +117,7 @@ export default function ContributionHeatmap({
             const weekEndDate = week[week.length - 1].date;
             return weekEndDate >= cutoffDate;
         });
-    }, [heatmapData, windowWidth]);
+    }, [heatmapData, windowWidth, visibleMonths]);
 
     const filteredMonths = useMemo(() => {
         const lastDate = heatmapData[heatmapData.length - 1][0].date;

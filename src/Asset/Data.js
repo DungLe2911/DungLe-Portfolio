@@ -1,7 +1,4 @@
-import HiPDACLetter from '../Asset/About/HiPDAC_Letter.pdf';
-import SmartEZLeter from '../Asset/About/SmartEZ_Letter.pdf';
-import FreddyLetter from '../Asset/About/Freddy_Sublet.pdf';
-import NathanLetter from '../Asset/About/Nathan_Smith.pdf';
+
 
 import birdie1 from '../Asset/Projects/Birdie/birdie1.jpg';
 import leinland1 from '../Asset/Projects/Leinland/leinland1.jpg';
@@ -378,6 +375,11 @@ const TestimonialsList = [
         ]
     },
 ]
+
+const HiPDACLetter = `${process.env.PUBLIC_URL}/assets/pdf/HiPDAC_Letter.pdf`;
+const SmartEZLeter = `${process.env.PUBLIC_URL}/assets/pdf/SmartEZ_Letter.pdf`;
+const FreddyLetter = `${process.env.PUBLIC_URL}/assets/pdf/Freddy_Sublet.pdf`;
+const NathanLetter = `${process.env.PUBLIC_URL}/assets/pdf/Nathan_Smith.pdf`;
 
 const RecommendationLettersURL = [
     {

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/DungLe-Portfolio/static/css/main.ca6fe894.css",
-    "main.js": "/DungLe-Portfolio/static/js/main.3b3a5a5b.js",
+    "main.js": "/DungLe-Portfolio/static/js/main.0a58a2b4.js",
     "static/media/birdie1.jpg": "/DungLe-Portfolio/static/media/birdie1.75257b05db74b691db87.jpg",
     "static/media/leinland1.jpg": "/DungLe-Portfolio/static/media/leinland1.75257b05db74b691db87.jpg",
     "static/media/portfolio1.png": "/DungLe-Portfolio/static/media/portfolio1.2c2ba9a1695d207cc951.png",
@@ -42,28 +42,28 @@
     "static/media/AWS.png": "/DungLe-Portfolio/static/media/AWS.47257bae80b7af70aff1.png",
     "static/media/JS.png": "/DungLe-Portfolio/static/media/JS.e1dffe5af0e5c249f33d.png",
     "static/media/Vue.png": "/DungLe-Portfolio/static/media/Vue.8fc4543e69b73318bf53.png",
-    "static/media/server.svg": "/DungLe-Portfolio/static/media/server.8b8a98a2212192c84901.svg",
+    "static/media/server.svg": "/DungLe-Portfolio/static/media/server.f7baae3c8e14ec59d41b.svg",
     "static/media/MySQL.png": "/DungLe-Portfolio/static/media/MySQL.a86a17ad09c7b9b0ee9b.png",
     "static/media/JWT.png": "/DungLe-Portfolio/static/media/JWT.7be08e707e11c1933aac.png",
     "static/media/MongoDB.png": "/DungLe-Portfolio/static/media/MongoDB.77cf215be50c48986b71.png",
-    "static/media/AI.svg": "/DungLe-Portfolio/static/media/AI.5c7319efd9fba9ccc9e6.svg",
+    "static/media/AI.svg": "/DungLe-Portfolio/static/media/AI.bc10af92c49ee3044238.svg",
     "static/media/NodeJS.png": "/DungLe-Portfolio/static/media/NodeJS.31c0e97d5776c294d370.png",
     "static/media/defaultAvatar.png": "/DungLe-Portfolio/static/media/defaultAvatar.d67449bd200299087929.png",
     "static/media/dashboard4.png": "/DungLe-Portfolio/static/media/dashboard4.a9608c1b0c38e5d762ca.png",
     "static/media/CSS.png": "/DungLe-Portfolio/static/media/CSS.e478cc59474522299215.png",
     "static/media/revicons.eot": "/DungLe-Portfolio/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/DungLe-Portfolio/static/media/revicons.57fd05d4ae650374c8de.ttf",
-    "static/media/dev.svg": "/DungLe-Portfolio/static/media/dev.2a51ebae3899ae5ab67a.svg",
-    "static/media/design.svg": "/DungLe-Portfolio/static/media/design.d6326a90fb3a6e270b2f.svg",
+    "static/media/dev.svg": "/DungLe-Portfolio/static/media/dev.82c4ed88e7a394b3e7c6.svg",
+    "static/media/design.svg": "/DungLe-Portfolio/static/media/design.6e94c007f825203c0084.svg",
     "static/media/revicons.woff": "/DungLe-Portfolio/static/media/revicons.e8746a624ed098489406.woff",
-    "static/media/quote.svg": "/DungLe-Portfolio/static/media/quote.478aa3c6ff76bfa1cc652270d25603cb.svg",
-    "static/media/Leetcode.svg": "/DungLe-Portfolio/static/media/Leetcode.006052f720389e44275dd8952f5f325a.svg",
+    "static/media/quote.svg": "/DungLe-Portfolio/static/media/quote.c02e79558e6dfde24898281d78de30be.svg",
+    "static/media/Leetcode.svg": "/DungLe-Portfolio/static/media/Leetcode.da1b8313c594fe8c5b19f690059095bc.svg",
     "index.html": "/DungLe-Portfolio/index.html",
     "main.ca6fe894.css.map": "/DungLe-Portfolio/static/css/main.ca6fe894.css.map",
-    "main.3b3a5a5b.js.map": "/DungLe-Portfolio/static/js/main.3b3a5a5b.js.map"
+    "main.0a58a2b4.js.map": "/DungLe-Portfolio/static/js/main.0a58a2b4.js.map"
   },
   "entrypoints": [
     "static/css/main.ca6fe894.css",
-    "static/js/main.3b3a5a5b.js"
+    "static/js/main.0a58a2b4.js"
   ]
 }

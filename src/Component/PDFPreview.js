@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import "../Style/PDFPreview.css"
 
-pdfjs.GlobalWorkerOptions.workerSrc = `${process.env.PUBLIC_URL}/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+
 
 const PDFPreview = (props) => {
   const [numPages, setNumPages] = useState();

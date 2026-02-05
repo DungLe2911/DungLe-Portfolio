@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/DungLe-Portfolio/static/css/main.a36e3c53.css",
-    "main.js": "/DungLe-Portfolio/static/js/main.c9a89d2a.js",
+    "main.css": "/DungLe-Portfolio/static/css/main.35c34ce5.css",
+    "main.js": "/DungLe-Portfolio/static/js/main.7f47aa34.js",
     "static/media/birdie1.jpg": "/DungLe-Portfolio/static/media/birdie1.75257b05db74b691db87.jpg",
     "static/media/leinland1.jpg": "/DungLe-Portfolio/static/media/leinland1.75257b05db74b691db87.jpg",
     "static/media/portfolio1.png": "/DungLe-Portfolio/static/media/portfolio1.2c2ba9a1695d207cc951.png",
@@ -12,7 +12,6 @@
     "static/media/portfolio5.png": "/DungLe-Portfolio/static/media/portfolio5.aa4fd394aabd870bbeb5.png",
     "static/media/portfolio4.png": "/DungLe-Portfolio/static/media/portfolio4.2f2c77607c57da3f6522.png",
     "static/media/finbud5.jpg": "/DungLe-Portfolio/static/media/finbud5.7a9bce1dd29679eb9f58.jpg",
-    "static/media/Dung Le Resume.pdf": "/DungLe-Portfolio/static/media/Dung Le Resume.a668d50f72fb14709ea8.pdf",
     "static/media/finbud2.png": "/DungLe-Portfolio/static/media/finbud2.b07c1a291eaecf10f098.png",
     "static/media/finbud6.jpg": "/DungLe-Portfolio/static/media/finbud6.896e103b953ac67adc9d.jpg",
     "static/media/SpringBoot.png": "/DungLe-Portfolio/static/media/SpringBoot.7b6c6607db98d8fd2526.png",
@@ -60,11 +59,11 @@
     "static/media/quote.svg": "/DungLe-Portfolio/static/media/quote.478aa3c6ff76bfa1cc652270d25603cb.svg",
     "static/media/Leetcode.svg": "/DungLe-Portfolio/static/media/Leetcode.006052f720389e44275dd8952f5f325a.svg",
     "index.html": "/DungLe-Portfolio/index.html",
-    "main.a36e3c53.css.map": "/DungLe-Portfolio/static/css/main.a36e3c53.css.map",
-    "main.c9a89d2a.js.map": "/DungLe-Portfolio/static/js/main.c9a89d2a.js.map"
+    "main.35c34ce5.css.map": "/DungLe-Portfolio/static/css/main.35c34ce5.css.map",
+    "main.7f47aa34.js.map": "/DungLe-Portfolio/static/js/main.7f47aa34.js.map"
   },
   "entrypoints": [
-    "static/css/main.a36e3c53.css",
-    "static/js/main.c9a89d2a.js"
+    "static/css/main.35c34ce5.css",
+    "static/js/main.7f47aa34.js"
   ]
 }

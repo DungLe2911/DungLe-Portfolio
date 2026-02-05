@@ -105,7 +105,7 @@ export default function ContributionHeatmap({
         return Object.values(data).reduce((sum, count) => sum + count, 0);
     }, [data]);
 
-    const filteredHeatmapData = useMemo(() => {
+    const filteredHeatmapData = useEffect(() => {
         if (!heatmapData.length) return [];
 
         const lastDate = heatmapData[heatmapData.length - 1][0].date;
@@ -119,7 +119,7 @@ export default function ContributionHeatmap({
         });
     }, [heatmapData, windowWidth, visibleMonths]);
 
-    const filteredMonths = useMemo(() => {
+    const filteredMonths = useEffect(() => {
         const lastDate = heatmapData[heatmapData.length - 1][0].date;
         const cutoffDate = new Date(lastDate);
         cutoffDate.setMonth(lastDate.getMonth() - visibleMonths + 1);

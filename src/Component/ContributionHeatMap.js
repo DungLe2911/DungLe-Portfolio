@@ -1,11 +1,20 @@
 
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 export default function ContributionHeatmap({
     data = {},
-    windowWidth = window.innerWidth
 }) {
-    
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+
+
     const heatmapData = useMemo(() => {
         const today = new Date();
 

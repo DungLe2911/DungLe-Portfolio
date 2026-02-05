@@ -1,7 +1,7 @@
-import HiPDACLetter from '../Asset/About/HiPDAC Letter.pdf';
-import SmartEZLeter from '../Asset/About/SmartEZ Letter.pdf';
-import FreddyLetter from '../Asset/About/Freddy Sublet.pdf';
-import NathanLetter from '../Asset/About/Nathan Smith.pdf';
+import HiPDACLetter from '../Asset/About/HiPDAC_Letter.pdf';
+import SmartEZLeter from '../Asset/About/SmartEZ_Letter.pdf';
+import FreddyLetter from '../Asset/About/Freddy_Sublet.pdf';
+import NathanLetter from '../Asset/About/Nathan_Smith.pdf';
 
 import birdie1 from '../Asset/Projects/Birdie/birdie1.jpg';
 import leinland1 from '../Asset/Projects/Leinland/leinland1.jpg';

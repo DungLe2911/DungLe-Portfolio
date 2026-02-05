@@ -1,42 +1,32 @@
 
 import React, { useEffect, useMemo, useState } from 'react';
 
-export default function ContributionHeatmap({
-    data = {},
-}) {
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const [visibleMonths, setVisibleMonths] = useState(0);
+export default function ContributionHeatmap({ data = {} }) {
+    const [windowWidth, setWindowWidth] = useState(
+        typeof window !== 'undefined' ? window.innerWidth : 1200
+    );
+    const [visibleMonths, setVisibleMonths] = useState(11);
 
     useEffect(() => {
         const handleResize = () => setWindowWidth(window.innerWidth);
-
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     useEffect(() => {
-        if (windowWidth < 580) {
-            setVisibleMonths(4);
-        } else if (windowWidth < 768) {
-            setVisibleMonths(6);
-        } else if (windowWidth < 1024) {
-            setVisibleMonths(8);
-        } else if (windowWidth < 1250) {
-            setVisibleMonths(10);
-        } else {
-            setVisibleMonths(11);
-        }
+        if (windowWidth < 580) setVisibleMonths(4);
+        else if (windowWidth < 768) setVisibleMonths(6);
+        else if (windowWidth < 1024) setVisibleMonths(8);
+        else if (windowWidth < 1250) setVisibleMonths(10);
+        else setVisibleMonths(11);
     }, [windowWidth]);
-
 
     const heatmapData = useMemo(() => {
         const today = new Date();
 
-        // Start from the most recent Sunday
         const endDate = new Date(today);
-        endDate.setDate(endDate.getDate() - endDate.getDay());
+        endDate.setDate(endDate.getDate() - endDate.getDay()); // most recent Sunday
 
-        // Go back 52 weeks (364 days) to get exactly one year
         const startDate = new Date(endDate);
         startDate.setDate(startDate.getDate() - 364);
 
@@ -46,11 +36,12 @@ export default function ContributionHeatmap({
         while (currentDate <= endDate) {
             const week = [];
             for (let i = 0; i < 7; i++) {
-                const dayTimestamp = Date.UTC(
-                    currentDate.getUTCFullYear(),
-                    currentDate.getUTCMonth(),
-                    currentDate.getUTCDate()
-                ) / 1000;
+                const dayTimestamp =
+                    Date.UTC(
+                        currentDate.getUTCFullYear(),
+                        currentDate.getUTCMonth(),
+                        currentDate.getUTCDate()
+                    ) / 1000;
 
                 const count = data[dayTimestamp] || 0;
 
@@ -60,8 +51,8 @@ export default function ContributionHeatmap({
                     dateStr: currentDate.toLocaleDateString('en-US', {
                         month: 'short',
                         day: 'numeric',
-                        year: 'numeric'
-                    })
+                        year: 'numeric',
+                    }),
                 });
 
                 currentDate.setDate(currentDate.getDate() + 1);
@@ -69,17 +60,8 @@ export default function ContributionHeatmap({
             weeks.push(week);
         }
 
-
         return weeks;
     }, [data]);
-
-    const getColor = (count) => {
-        if (count === 0) return '#1e293b'; // gray-800
-        if (count <= 2) return '#14532d'; // green-900
-        if (count <= 5) return '#15803d'; // green-700
-        if (count <= 10) return '#22c55e'; // green-500
-        return '#4ade80'; // green-400
-    };
 
     const months = useMemo(() => {
         const monthLabels = [];
@@ -92,7 +74,7 @@ export default function ContributionHeatmap({
             if (month !== lastMonth && weekIndex > 0) {
                 monthLabels.push({
                     index: weekIndex,
-                    label: firstDay.date.toLocaleDateString('en-US', { month: 'short' })
+                    label: firstDay.date.toLocaleDateString('en-US', { month: 'short' }),
                 });
                 lastMonth = month;
             }
@@ -101,37 +83,25 @@ export default function ContributionHeatmap({
         return monthLabels;
     }, [heatmapData]);
 
-    const totalContributions = useMemo(() => {
-        return Object.values(data).reduce((sum, count) => sum + count, 0);
-    }, [data]);
+    // ✅ derived cutoff based on visibleMonths
+    const cutoffDate = useMemo(() => {
+        if (!heatmapData.length) return null;
+        const lastWeekStart = heatmapData[heatmapData.length - 1][0].date;
+        const d = new Date(lastWeekStart);
+        d.setMonth(lastWeekStart.getMonth() - visibleMonths + 1);
+        return d;
+    }, [heatmapData, visibleMonths]);
 
-    const filteredHeatmapData = useEffect(() => {
-        if (!heatmapData.length) return [];
+    // ✅ recomputes whenever visibleMonths changes (which is driven by windowWidth)
+    const filteredHeatmapData = useMemo(() => {
+        if (!heatmapData.length || !cutoffDate) return [];
+        return heatmapData.filter((week) => week[6].date >= cutoffDate); // week end >= cutoff
+    }, [heatmapData, cutoffDate]);
 
-        const lastDate = heatmapData[heatmapData.length - 1][0].date;
-        const cutoffDate = new Date(lastDate);
-        cutoffDate.setMonth(lastDate.getMonth() - visibleMonths + 1);
-
-        // keep only weeks where the last day of the week >= cutoffDate
-        return heatmapData.filter((week) => {
-            const weekEndDate = week[week.length - 1].date;
-            return weekEndDate >= cutoffDate;
-        });
-    }, [heatmapData, windowWidth, visibleMonths]);
-
-    const filteredMonths = useEffect(() => {
-        const lastDate = heatmapData[heatmapData.length - 1][0].date;
-        const cutoffDate = new Date(lastDate);
-        cutoffDate.setMonth(lastDate.getMonth() - visibleMonths + 1);
-
-        return months.filter((m) => {
-            const monthDate = heatmapData[m.index][0].date;
-            return monthDate >= cutoffDate;
-        });
-    }, [months, heatmapData, windowWidth]);
-
-
-
+    const filteredMonths = useMemo(() => {
+        if (!months.length || !cutoffDate || !heatmapData.length) return [];
+        return months.filter((m) => heatmapData[m.index][0].date >= cutoffDate);
+    }, [months, heatmapData, cutoffDate]);
 
     return (
         <div style={{

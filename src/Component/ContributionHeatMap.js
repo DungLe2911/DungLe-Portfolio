@@ -1,25 +1,33 @@
 
 import React, { useEffect, useMemo, useState } from 'react';
 
-export default function ContributionHeatmap({ data = {} }) {
-    const [windowWidth, setWindowWidth] = useState(
-        typeof window !== 'undefined' ? window.innerWidth : 1200
-    );
-    const [visibleMonths, setVisibleMonths] = useState(11);
+export default function ContributionHeatmap({
+    data = {},
+}) {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [visibleMonths, setVisibleMonths] = useState(0);
 
     useEffect(() => {
         const handleResize = () => setWindowWidth(window.innerWidth);
+
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     useEffect(() => {
-        if (windowWidth < 580) setVisibleMonths(4);
-        else if (windowWidth < 768) setVisibleMonths(6);
-        else if (windowWidth < 1024) setVisibleMonths(8);
-        else if (windowWidth < 1250) setVisibleMonths(10);
-        else setVisibleMonths(11);
+        if (windowWidth < 580) {
+            setVisibleMonths(4);
+        } else if (windowWidth < 768) {
+            setVisibleMonths(6);
+        } else if (windowWidth < 1024) {
+            setVisibleMonths(8);
+        } else if (windowWidth < 1250) {
+            setVisibleMonths(10);
+        } else {
+            setVisibleMonths(11);
+        }
     }, [windowWidth]);
+
 
     const heatmapData = useMemo(() => {
         const today = new Date();
@@ -62,6 +70,14 @@ export default function ContributionHeatmap({ data = {} }) {
 
         return weeks;
     }, [data]);
+    
+    const getColor = (count) => {
+        if (count === 0) return '#1e293b'; // gray-800
+        if (count <= 2) return '#14532d'; // green-900
+        if (count <= 5) return '#15803d'; // green-700
+        if (count <= 10) return '#22c55e'; // green-500
+        return '#4ade80'; // green-400
+    };
 
     const months = useMemo(() => {
         const monthLabels = [];
@@ -83,7 +99,10 @@ export default function ContributionHeatmap({ data = {} }) {
         return monthLabels;
     }, [heatmapData]);
 
-    // ✅ derived cutoff based on visibleMonths
+    const totalContributions = useMemo(() => {
+        return Object.values(data).reduce((sum, count) => sum + count, 0);
+    }, [data]);
+
     const cutoffDate = useMemo(() => {
         if (!heatmapData.length) return null;
         const lastWeekStart = heatmapData[heatmapData.length - 1][0].date;
@@ -92,7 +111,6 @@ export default function ContributionHeatmap({ data = {} }) {
         return d;
     }, [heatmapData, visibleMonths]);
 
-    // ✅ recomputes whenever visibleMonths changes (which is driven by windowWidth)
     const filteredHeatmapData = useMemo(() => {
         if (!heatmapData.length || !cutoffDate) return [];
         return heatmapData.filter((week) => week[6].date >= cutoffDate); // week end >= cutoff
@@ -102,6 +120,9 @@ export default function ContributionHeatmap({ data = {} }) {
         if (!months.length || !cutoffDate || !heatmapData.length) return [];
         return months.filter((m) => heatmapData[m.index][0].date >= cutoffDate);
     }, [months, heatmapData, cutoffDate]);
+
+
+
 
     return (
         <div style={{

@@ -1,11 +1,13 @@
-import { useState } from 'react';
-import { Document, Page, pdfjs } from 'react-pdf';
-import "../Style/PDFPreview.css"
+import { useState } from "react";
+import { Document, Page, pdfjs } from "react-pdf";
+import "../Style/PDFPreview.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+// import workerSrc from "pdfjs-dist/build/pdf.worker.min.mjs";
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 
-const PDFPreview = (props) => {
+const PDFPreview = ({ path, scale = 1.7 }) => {
   const [numPages, setNumPages] = useState();
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -15,10 +17,10 @@ const PDFPreview = (props) => {
 
   return (
     <div className="previewContainer">
-      <Document file={props.path} onLoadSuccess={onDocumentLoadSuccess}>
+      <Document file={path} onLoadSuccess={onDocumentLoadSuccess}>
         <Page
           canvasBackground={"white"}
-          scale={props.scale ? props.scale : 1.7}
+          scale={scale}
           width={200}
           pageNumber={pageNumber}
           renderTextLayer={false}
@@ -28,7 +30,6 @@ const PDFPreview = (props) => {
       </Document>
     </div>
   );
-}
-
+};
 
 export default PDFPreview;

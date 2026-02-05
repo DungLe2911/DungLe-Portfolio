@@ -1,6 +1,7 @@
 import HiPDACLetter from '../Asset/About/HiPDAC Letter.pdf';
 import SmartEZLeter from '../Asset/About/SmartEZ Letter.pdf';
 import FreddyLetter from '../Asset/About/Freddy Sublet.pdf';
+import NathanLetter from '../Asset/About/Nathan Smith.pdf';
 
 import birdie1 from '../Asset/Projects/Birdie/birdie1.jpg';
 import leinland1 from '../Asset/Projects/Leinland/leinland1.jpg';
@@ -70,19 +71,19 @@ const socialList = [
 const navBarList = [
     {
         title: "About",
-        link: "/DungLe-Portfolio/"
+        link: "/"
     },
     {
         title: "Resume",
-        link: "/DungLe-Portfolio/resume"
+        link: "/resume"
     },
     {
         title: "Projects",
-        link: "/DungLe-Portfolio/project"
+        link: "/project"
     },
     {
         title: "Contact",
-        link: "/DungLe-Portfolio/contact"
+        link: "/contact"
     }
 ]
 
@@ -130,7 +131,7 @@ const experienceList = [
         bulletPoints: [
             "Designed a backend server with [microservices architecture] using [java], [Spring Boot] following [RESTful API] guidelines",
             "Utilized [Hibernate] to generate SQL queries for [MySQL] database interactions, improving development efficiency, and reducing the need of manually creating SQL queries.",
-            "Achieved [internal microservices communication] with [Feign Client] for synchronous calls, and [Kafka] for event – driven workflow",
+            "Achieved [internal] [microservices] [communication] with [Feign Client] for synchronous calls, and [Kafka] for event – driven workflow",
             "Deployed and managed the application on [AWS] utilizing various of difference services [Dynamo RDS], [SQS], [Secret Manager], and [additional services], while enforcing access control between the services via [IAM] roles and policies.",
             "Maintained the code using [GitLab] and set up [CI/CD] pipeline to dev/preprod/QA deployment on [AWS Code Deploy]."
         ]
@@ -380,17 +381,41 @@ const TestimonialsList = [
 
 const RecommendationLettersURL = [
     {
-        name: "HiPDAC Research Group",
-        filePath: HiPDACLetter
+        author: "Nathan T Smith",
+        authorTitle: "Eastern Plant Manager",
+        organization: "South Georgia Pecan Company",
+        relationship: "Manager",
+        dateGiven: "Feb 3rd, 2025",
+        type: "Professional",
+        filePath: NathanLetter,
     },
     {
-        name: "South Georgia Pecan Co. Senior",
-        filePath: FreddyLetter
+        author: "Frederick Sublet",
+        authorTitle: "Safety and Training Manager",
+        organization: "South Georgia Pecan Company",
+        relationship: "Senior Colleague",
+        dateGiven: "May 17th, 2025",
+        type: "Professional",
+        filePath: FreddyLetter,
     },
     {
-        name: "SmartEZ Intern",
-        filePath: SmartEZLeter
+        author: "Dingwen Tao",
+        authorTitle: "Professor at the Institute of Computing Technology, Chinese Academy of Sciences",
+        organization: "HiPDAC Group - Washington State University",
+        relationship: "Professor",
+        dateGiven: "Dec 5th, 2021",
+        type: "Academic",
+        filePath: HiPDACLetter,
     },
+    {
+        author: "Phuong Quang Nguyen",
+        authorTitle: "Former Head of SmartEZ IT department",
+        organization: "SmartEZ",
+        relationship: "Mentor",
+        dateGiven: "Aug 9th, 2019",
+        type: "Academic",
+        filePath: SmartEZLeter,
+    }
 ]
 
 // -------------------------------------------- PROJECT PAGE-------------------------------------------------------

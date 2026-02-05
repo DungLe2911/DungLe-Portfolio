@@ -6,14 +6,40 @@ import { useEffect, useRef, useState } from "react";
 import PDFPreview from "../Component/PDFPreview.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as FaBrand from '@fortawesome/free-brands-svg-icons'
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import RecommendationLetterCard from "../Component/RecommendationLetterCard.js";
 
 
+const responsive = {
+    largeDesktop: {
+        breakpoint: { max: 4000, min: 1250 },
+        items: 2
+    },
+    desktop: {
+        breakpoint: { max: 1250, min: 1024 },
+        items: 2
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 768 },
+        items: 2
+    },
+    smallTablet: {
+        breakpoint: { max: 768, min: 580 },
+        items: 1
+    },
+    mobile: {
+        breakpoint: { max: 580, min: 0 },
+        items: 1
+    }
+};
 export default function About() {
     const [modalOpen, setModalOpen] = useState(false);
     const [currentModal, setCurrentModal] = useState(-1);
     const [previewModalOpen, setPreviewModalOpen] = useState(false);
     const [currentPreviewModal, setCurrenPreviewtModal] = useState(-1);
     const [width, setWidth] = useState(window.innerWidth);
+    const [deviceRatio, setDeviceRatio] = useState(window.devicePixelRatio);
 
     const modalOpenRef = useRef(modalOpen);
 
@@ -175,7 +201,7 @@ export default function About() {
                 </div> : <></>}
             <section className="achievements">
                 <h3 className="h3 achievementsTitle">Achievements / Recomendations Letters</h3>
-                <ul className="achievementsList has-scrollbar">
+                {/* <ul className="achievementsList has-scrollbar">
                     {RecommendationLettersURL.map((url, index) => {
                         return (
                             <li onClick={() => { handlePreviewModalClick(index) }} key={index} className="achievementsItem">
@@ -184,16 +210,37 @@ export default function About() {
                             </li>
                         )
                     })}
-                </ul>
+                </ul> */}
+                <Carousel
+                    responsive={responsive}
+                    key={width} 
+                    arrows
+                    showDots
+                    swipeable
+                    draggable
+                    infinite={false}
+                    keyBoardControl
+                    containerClass="carouselContainer"
+                    dotListClass="carouselDots"
+                    itemClass="carouselItem"
+                >
+                    {RecommendationLettersURL.map((letter, index) => {
+                        return (
+                            <RecommendationLetterCard key={index} letter={letter} onClick={handlePreviewModalClick} index={index} />
+                        )
+                    })}
+                </Carousel>
             </section>
-            {previewModalOpen ?
-                <div className="modalContainer">
+            {previewModalOpen &&
+                (<div className="modalContainer">
                     <div onClick={() => { closePreviewModal() }} className="overlay" />
                     <section className="testimonialsModal">
-                        <PDFPreview path={RecommendationLettersURL[currentPreviewModal].filePath}
-                            scale={width > 1024 ? 4 : width > 768 ? 3 : width > 580 ? 2.27 : 1.8} />
+                        <PDFPreview
+                            path={RecommendationLettersURL[currentPreviewModal].filePath}
+                            scale={width > 1024 ? 3.5 : width > 768 ? 3 : width > 580 ? 2.27 : 1.8}
+                        />
                     </section>
-                </div> : <></>}
+                </div>)}
         </div>
     )
 }

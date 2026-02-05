@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import About from "./Page/About";
 import Contact from "./Page/Contact";
 import Project from "./Page/Projects";
@@ -8,6 +8,7 @@ import InfoCard from "./Component/InfoCard";
 import NavBar from "./Component/NavBar";
 import { ToastContainer } from "react-toastify";
 
+
 function App() {
   return (
     <div className="App">
@@ -16,10 +17,10 @@ function App() {
       <div className="contentArea">
         <NavBar />
         <Routes>
-          <Route path="/DungLe-Portfolio/" element ={<About />}/>
-          <Route path="/DungLe-Portfolio/resume" element ={<Resume />}/>
-          <Route path="/DungLe-Portfolio/project" element ={<Project />}/>
-          <Route path="/DungLe-Portfolio/contact" element ={<Contact />}/>
+          <Route path="/" element ={<About />}/>
+          <Route path="/resume" element ={<Resume />}/>
+          <Route path="/project" element ={<Project />}/>
+          <Route path="/contact" element ={<Contact />}/>
         </Routes>
         <div className="copyright">
           Work inspired by &nbsp; 

@@ -191,7 +191,7 @@
     align-items: center;
     overflow-y: auto;
     overscroll-behavior: contain;
-    z-index: 20;
+    z-index: 1001;
     pointer-events: all;
     visibility: visible;
 }

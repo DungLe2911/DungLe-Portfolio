@@ -69,6 +69,21 @@ export default function About() {
 
     }, []);
 
+    useEffect(() => {
+        if (modalOpen || previewModalOpen) {
+            // Disable background scrolling
+            document.body.style.overflow = "hidden";
+        } else {
+            // Re-enable scrolling
+            document.body.style.overflow = "auto";
+        }
+
+        // Cleanup in case component unmounts while modal is open
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [modalOpen, previewModalOpen]);
+
 
     const toggleModal = () => {
         setModalOpen(!modalOpen);
@@ -213,7 +228,7 @@ export default function About() {
                 </ul> */}
                 <Carousel
                     responsive={responsive}
-                    key={width} 
+                    key={width}
                     arrows
                     showDots
                     swipeable
@@ -238,6 +253,7 @@ export default function About() {
                         <PDFPreview
                             path={RecommendationLettersURL[currentPreviewModal].filePath}
                             scale={width > 1024 ? 3.5 : width > 768 ? 3 : width > 580 ? 2.27 : 1.8}
+                            handleClose={closePreviewModal}
                         />
                     </section>
                 </div>)}

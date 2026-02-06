@@ -1,6 +1,9 @@
 
 
-import birdie1 from '../Asset/Projects/Birdie/birdie1.jpg';
+import birdie1 from '../Asset/Projects/Birdie/birdie1.png';
+import birdie2 from '../Asset/Projects/Birdie/birdie2.png';
+import birdie3 from '../Asset/Projects/Birdie/birdie3.png';
+import birdie4 from '../Asset/Projects/Birdie/birdie4.png';
 import leinland1 from '../Asset/Projects/Leinland/leinland1.jpg';
 import leinland2 from '../Asset/Projects/Leinland/leinland1.jpg';
 import leinland3 from '../Asset/Projects/Leinland/leinland1.jpg';
@@ -522,34 +525,53 @@ const projectList = [
     //Birdie AI Project
     {
         name: "Birdie AI",
+        company: "Side Project",
         description: [
-            "AI nutrition chatbot built with Next.js and OpenAI API for meal planning and food recommendations.",
-            "Integrated Stripe subscriptions, JWT authentication, and AWS Lambda backend APIs."
+            "Birdie AI is an AI-powered nutrition chatbot that helps pregnant and postpartum moms plan meals, manage their diet, and create personalized recipes. Users can save and organize recipes for easy access through an interactive chat interface.",
+            "It also serves fitness enthusiasts and anyone looking to optimize their diet. Built with Next.js and the OpenAI API, Birdie AI features Stripe subscriptions, JWT authentication, and AWS Lambda APIs for a seamless, personalized experience."
         ],
-        sourceCodeURL: "https://github.com/yourname/birdie-ai",
+        sourceCodeURL: "https://github.com/BirdieAI-App/BirdieAI-website",
         imageList: [
             {
                 image: birdie1,
-                legend: "Birdie AI - Chat Interface"
+                legend: "Landing Page"
 
             },
             {
-                image: birdie1,
-                legend: "Birdie AI - Chat Interface"
+                image: birdie2,
+                legend: "Pring + FQA"
 
             },
             {
-                image: birdie1,
-                legend: "Birdie AI - Chat Interface"
+                image: birdie3,
+                legend: "Login and Signup Page"
 
             },
             {
-                image: birdie1,
-                legend: "Birdie AI - Chat Interface"
+                image: birdie4,
+                legend: "Chatbot Interface - WIP"
             }
         ],
         deployedURL: "https://birdieapp.co",
-        category: "Full Stack / AI"
+        category: "Full Stack / AI",
+        techStack: [
+            "NextJS",
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "NodeJS",
+            "ExpressJS",
+            "AWS Lambda",
+            "OpenAI API",
+            "Stripe API",
+            "JWT Authentication",
+            "DynamoDB",
+            "Axios",
+            'AWS API Gateway',
+            'RAG',
+            "PineConeDB",
+            "OAuth 2.0",
+        ]
     },
     //FinBud AI Project
     {
@@ -609,7 +631,7 @@ const projectList = [
             "OAuth 2.0",
             "ExpressJS",
             "MongoDB",
-            "Alpha Vantage API"
+            "Alpha Vantage API",
         ]
     },
 ]

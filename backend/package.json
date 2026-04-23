@@ -41,7 +41,7 @@
     "react-scripts": "^5.0.1",
     "react-toastify": "^11.0.5",
     "web-vitals": "^2.1.4",
-    "express": "^4.x.x"
+    "express": "^4.19.2"
   },
   "scripts": {
     "start": "node server.js",

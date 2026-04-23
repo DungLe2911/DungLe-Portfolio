@@ -44,8 +44,7 @@
     "express": "^4.19.2"
   },
   "scripts": {
-    "start": "node server.js",
-    "build": "react-scripts build"
+    "start": "node server.js"
   },
   "eslintConfig": {
     "extends": [

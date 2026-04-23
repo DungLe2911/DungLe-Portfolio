@@ -123,7 +123,7 @@ export default function Contact() {
                 }
             }
             setLoading(true);
-            const response = await emailjs.send(serviceID, templateID, body, publicKey);
+            await emailjs.send(serviceID, templateID, body, publicKey);
             setEmail("");
             setMessage("");
             setName("");

@@ -19,16 +19,14 @@ export default function Resume() {
     useEffect(() => {
         document.title = "Resume - Dung Hoang Le";
         const handleResize = () => setWidth(window.innerWidth);
-
-        const BASE_URL = process.env.NODE_ENV == 'development' ? 'http://localhost:3000' : 'https://alfa-leetcode-api.onrender.com';
-        const URL = `${BASE_URL}/lehoangdung29111998/profile`;
         const fetchLeetCodeData = async () => {
             try {
                 const response = await fetchUserProfile();
                 console.log("Fetched LeetCode Profile:", response);
                 // const data = await response.json();
                 // console.log("Fetched LeetCode Profile:", data);
-                // setLeetcodeProfile(data);
+                console.log("Fetched LeetCode Profile Data:", response.data.data);
+                setLeetcodeProfile(response.data.data);
             } catch (error) {
                 console.error("Error fetching LeetCode data:", error);
             }
@@ -45,6 +43,11 @@ export default function Resume() {
             setShowAmount(showAmount + 3);
         }
     }
+
+    // useEffect(() => {
+    //     if (!leetcodeProfile) return;
+    //     console.log("LeetCode Profile Data:", JSON.stringify(leetcodeProfile.submissionCalendar));
+    // }, [leetcodeProfile]);
 
     const getDuration = (dateRange) => {
         const [startStr, endStr] = dateRange.split(" - ");
@@ -177,7 +180,7 @@ export default function Resume() {
                         <h3 className="h3"> Leetcode</h3>
                     </div>
                     <LeetCodePieChart data={leetcodeProfile} windowWidth={width} className={`rounded-md h-${width <= 425 ? 90 : 72}`} />
-                    <ContributionHeatMap data={leetcodeProfile.submissionCalendar} windowWidth={width}/>
+                    <ContributionHeatMap data={JSON.parse(leetcodeProfile.matchedUser.submissionCalendar)} windowWidth={width}/>
                 </section>
             )}
 

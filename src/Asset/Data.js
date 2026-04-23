@@ -1,6 +1,9 @@
 
 
-import birdie1 from '../Asset/Projects/Birdie/birdie1.jpg';
+import birdie1 from '../Asset/Projects/Birdie/birdie1.png';
+import birdie2 from '../Asset/Projects/Birdie/birdie2.png';
+import birdie3 from '../Asset/Projects/Birdie/birdie3.png';
+import birdie4 from '../Asset/Projects/Birdie/birdie4.png';
 
 import leinland1 from '../Asset/Projects/Leinland/Homepage.png';
 import leinland2 from '../Asset/Projects/Leinland/Dashboard.png';

@@ -65,19 +65,23 @@ export default function LeetCodePieChart({
 
     useEffect(() => {
         if (data === null) return;
+        console.log("Received data in PieChart:", data);
         const temp = [];
-        const total = data.totalEasy + data.totalMedium + data.totalHard;
-        temp.push({ id: 'Easy', label: 'Easy', value: data.totalEasy, percentage: (data.totalEasy / total) * 100, color: questionColors['Easy'] });
-        temp.push({ id: 'Medium', label: 'Medium', value: data.totalMedium, percentage: (data.totalMedium / total) * 100, color: questionColors['Medium'] });
-        temp.push({ id: 'Hard', label: 'Hard', value: data.totalHard, percentage: (data.totalHard / total) * 100, color: questionColors['Hard'] });
+        const total = data.allQuestionsCount[1].count + data.allQuestionsCount[2].count + data.allQuestionsCount[3].count;
+        const solvedEasy = data.matchedUser.submitStats.acSubmissionNum.find(item => item.difficulty === 'Easy')?.count || 0;
+        const solvedMedium = data.matchedUser.submitStats.acSubmissionNum.find(item => item.difficulty === 'Medium')?.count || 0;
+        const solvedHard = data.matchedUser.submitStats.acSubmissionNum.find(item => item.difficulty === 'Hard')?.count || 0;
+        temp.push({ id: 'Easy', label: 'Easy', value: data.allQuestionsCount[1].count, percentage: (data.allQuestionsCount[1].count / total) * 100, color: questionColors['Easy'] });
+        temp.push({ id: 'Medium', label: 'Medium', value: data.allQuestionsCount[2].count, percentage: (data.allQuestionsCount[2].count / total) * 100, color: questionColors['Medium'] });
+        temp.push({ id: 'Hard', label: 'Hard', value: data.allQuestionsCount[3].count, percentage: (data.allQuestionsCount[3].count / total) * 100, color: questionColors['Hard'] });
         setQuestionSet(temp);
         const details = [];
-        details.push({ id: 'Easy - Solved', label: 'Solved', value: data.easySolved, percentage: (data.easySolved / data.totalEasy) * 100, color: questionColors['Easy'] });
-        details.push({ id: 'Easy - TO DO', label: 'To Do', value: data.totalEasy - data.easySolved, percentage: ((data.totalEasy - data.easySolved) / data.totalEasy) * 100, color: hexToRgba(questionColors['Easy'], 0.4) });
-        details.push({ id: 'Medium - Solved', label: 'Solved', value: data.mediumSolved, percentage: (data.mediumSolved / data.totalMedium) * 100, color: questionColors['Medium'] });
-        details.push({ id: 'Medium - TO DO', label: 'To Do', value: data.totalMedium - data.mediumSolved, percentage: ((data.totalMedium - data.mediumSolved) / data.totalMedium) * 100, color: hexToRgba(questionColors['Medium'], 0.4) });
-        details.push({ id: 'Hard - Solved', label: 'Solved', value: data.hardSolved, percentage: (data.hardSolved / data.totalHard) * 100, color: questionColors['Hard'] });
-        details.push({ id: 'Hard - TO DO', label: 'To Do', value: data.totalHard - data.hardSolved, percentage: ((data.totalHard - data.hardSolved) / data.totalHard) * 100, color: hexToRgba(questionColors['Hard'], 0.4) });
+        details.push({ id: 'Easy - Solved', label: 'Solved', value: solvedEasy, percentage: (solvedEasy / data.allQuestionsCount[1].count) * 100, color: questionColors['Easy'] });
+        details.push({ id: 'Easy - TO DO', label: 'To Do', value: data.allQuestionsCount[1].count - solvedEasy, percentage: ((data.allQuestionsCount[1].count - solvedEasy) / data.allQuestionsCount[1].count) * 100, color: hexToRgba(questionColors['Easy'], 0.4) });
+        details.push({ id: 'Medium - Solved', label: 'Solved', value: solvedMedium, percentage: (solvedMedium / data.allQuestionsCount[2].count) * 100, color: questionColors['Medium'] });
+        details.push({ id: 'Medium - TO DO', label: 'To Do', value: data.allQuestionsCount[2].count - solvedMedium, percentage: ((data.allQuestionsCount[2].count - solvedMedium) / data.allQuestionsCount[2].count) * 100, color: hexToRgba(questionColors['Medium'], 0.4) });
+        details.push({ id: 'Hard - Solved', label: 'Solved', value: solvedHard, percentage: (solvedHard / data.allQuestionsCount[3].count) * 100, color: questionColors['Hard'] });
+        details.push({ id: 'Hard - TO DO', label: 'To Do', value: data.allQuestionsCount[3].count - solvedHard, percentage: ((data.allQuestionsCount[3].count - solvedHard) / data.allQuestionsCount[3].count) * 100, color: hexToRgba(questionColors['Hard'], 0.4) });
         setDifficultyDetails(details);
         setTotalQuestions(total);
     }, [data]);

@@ -9,6 +9,7 @@ import { ReactComponent as LeetcodeIcon } from "../Asset/Resume/Leetcode.svg";
 import LeetCodePieChart from "../Component/LeetCodePieChart.js";
 import { Box, Button, Fade } from "@mui/material";
 import ContributionHeatMap from "../Component/ContributionHeatMap.js";
+import { fetchUserProfile } from "../Utility/Request.js";
 
 export default function Resume() {
     const [width, setWidth] = useState(window.innerWidth);
@@ -23,10 +24,11 @@ export default function Resume() {
         const URL = `${BASE_URL}/lehoangdung29111998/profile`;
         const fetchLeetCodeData = async () => {
             try {
-                const response = await fetch(URL);
-                const data = await response.json();
-                console.log("Fetched LeetCode Profile:", data);
-                setLeetcodeProfile(data);
+                const response = await fetchUserProfile();
+                console.log("Fetched LeetCode Profile:", response);
+                // const data = await response.json();
+                // console.log("Fetched LeetCode Profile:", data);
+                // setLeetcodeProfile(data);
             } catch (error) {
                 console.error("Error fetching LeetCode data:", error);
             }

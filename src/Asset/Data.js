@@ -1,12 +1,23 @@
 
 
 import birdie1 from '../Asset/Projects/Birdie/birdie1.jpg';
-import leinland1 from '../Asset/Projects/Leinland/leinland1.jpg';
-import leinland2 from '../Asset/Projects/Leinland/leinland1.jpg';
-import leinland3 from '../Asset/Projects/Leinland/leinland1.jpg';
-import leinland4 from '../Asset/Projects/Leinland/leinland1.jpg';
-import leinland5 from '../Asset/Projects/Leinland/leinland1.jpg';
-import leinland6 from '../Asset/Projects/Leinland/leinland1.jpg';
+
+import leinland1 from '../Asset/Projects/Leinland/Homepage.png';
+import leinland2 from '../Asset/Projects/Leinland/Dashboard.png';
+import leinland3 from '../Asset/Projects/Leinland/People Management.png';
+import leinland4 from '../Asset/Projects/Leinland/MachineAreaSetting.png';
+import leinland5 from '../Asset/Projects/Leinland/MachineSetting.png';
+import leinland6 from '../Asset/Projects/Leinland/QualityCheck.png';
+import leinland7 from '../Asset/Projects/Leinland/QualityCheckHistory.png';
+import leinland8 from '../Asset/Projects/Leinland/Weekly Forms Supervisor Verification.png';
+import leinland9 from '../Asset/Projects/Leinland/Weekly Forms Traversal.png';
+import leinland10 from '../Asset/Projects/Leinland/Maintenance request form.png';
+import leinland11 from '../Asset/Projects/Leinland/Maintenance Live Screen.png';
+import leinland12 from '../Asset/Projects/Leinland/Maintenance Order Resolve.png';
+import leinland13 from '../Asset/Projects/Leinland/Completed and Mapped Form Example 1.png';
+import leinland14 from '../Asset/Projects/Leinland/Completed and Mapped Form Example 2.png';
+import leinland15 from '../Asset/Projects/Leinland/Account Setting page.png';
+
 import dashboard1 from '../Asset/Projects/SGP Production Live Dashboard/dashboard1.png';
 import dashboard2 from '../Asset/Projects/SGP Production Live Dashboard/dashboard2.png';
 import dashboard4 from '../Asset/Projects/SGP Production Live Dashboard/dashboard4.png';
@@ -435,16 +446,20 @@ const projectList = [
         sourceCodeURL: null,
         imageList: [
             { image: leinland1, legend: "Homepage" },
-            { image: leinland1, legend: "Dashboard" },
-            { image: leinland2, legend: "People Management Interface" },
-            { image: leinland3, legend: "Machine Setting Interface" },
-            { image: leinland4, legend: "Digital form - Quality Check" },
-            { image: leinland5, legend: "Digital form - Quality Check History Submission" },
-            { image: leinland6, legend: "Supervisor Verification" },
-            { image: leinland6, legend: "Maintenance Work Order Request" },
-            { image: leinland6, legend: "Maintenance Request Live Screen" },
-            { image: leinland6, legend: "Management team email Inivation" },
-            { image: leinland6, legend: "OTP forget Password" },
+            { image: leinland2, legend: "Dashboard" },
+            { image: leinland3, legend: "People Management Interface" },
+            { image: leinland4, legend: "Machine Setting Interface" },
+            { image: leinland5, legend: "Machine Setting Per Area" },
+            { image: leinland6, legend: "Digital form - Quality Check" },
+            { image: leinland7, legend: "Digital form - Quality Check History Submission" },
+            { image: leinland8, legend: "Weekly Forms Supervisor Verification" },
+            { image: leinland9, legend: "Weekly Forms Traversal" },
+            { image: leinland10, legend: "Maintenance Work Order Request" },
+            { image: leinland11, legend: "Maintenance Request Live Screen" },
+            { image: leinland12, legend: "Maintenance Order Resolve" },
+            { image: leinland15, legend: "Account Setting Page" },
+            { image: leinland13, legend: "Completed and Mapped Form Example 1" },
+            { image: leinland14, legend: "Completed and Mapped Form Example 2" },
         ],
         deployedURL: null,
         category: "Enterprise / Internal Tools",
@@ -457,7 +472,9 @@ const projectList = [
             "JWT Authentication",
             "GitHub",
             "Hibernate",
-            "RESTful API"
+            "RESTful API",
+            "Microservices Architecture",
+            "MSSQL Server",
         ]
     },
     //Dashboard Project

@@ -41,14 +41,22 @@ function PieCenterLabel({ children }) {
 
 export default function LeetCodePieChart({
     data = null,
-    windowWidth = window.innerWidth,
     className = ''
 }) {
-
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [view, setView] = useState('All');
     const [totalQuestions, setTotalQuestions] = useState(0);
     const [questionSet, setQuestionSet] = useState([]);
     const [difficultyDetails, setDifficultyDetails] = useState([]);
+
+    // Handle window resize
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const handleViewChange = (event, newView) => {
         if (newView !== null) {
             setView(newView);
@@ -74,23 +82,26 @@ export default function LeetCodePieChart({
         setTotalQuestions(total);
     }, [data]);
 
+    // Determine if mobile (vertical) or desktop (horizontal) layout
+    const isMobile = windowWidth <= 560;
     const innerRadius = 50;
     const middleRadius = 120;
-    const chartSize = windowWidth <= 425 ? 280 : 400; // Adjust based on screen size
+    const chartSize = isMobile ? 280 : 400;
 
     if (data === null) return null;
+    
     return (
-        <Box className={`flex ${windowWidth <= 425 ? 'flex-col-reverse justify-center' : 'flex-row-reverse items-center gap-4'} ${className}`}>
+        <Box className={`flex ${isMobile ? 'flex-col-reverse justify-center' : 'flex-row-reverse items-center gap-4'} ${className}`}>
             <ToggleButtonGroup
                 color="primary"
                 size="large"
                 value={view}
                 exclusive
                 sx={{
-                    width: `${windowWidth <= 425 ? '100%' : 'auto'}`,
+                    width: `${isMobile ? '100%' : 'auto'}`,
                 }}
                 fullWidth
-                orientation={windowWidth <= 425 ? 'horizontal' : 'vertical'}
+                orientation={isMobile ? 'horizontal' : 'vertical'}
                 onChange={handleViewChange}
             >
                 {mode.map((mode) => (
@@ -108,7 +119,7 @@ export default function LeetCodePieChart({
                 ))}
             </ToggleButtonGroup>
             <Box
-                className={`flex justify-center items-center h-fit flex-1 ${windowWidth <= 425 ? 'w-full' : 'w-1/2'}`}
+                className={`flex justify-center items-center h-fit flex-1 ${isMobile ? 'w-full' : 'w-1/2'}`}
                 sx={{
                     overflow: 'visible',
                     padding: '20px',

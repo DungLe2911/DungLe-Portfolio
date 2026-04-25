@@ -111,14 +111,20 @@ export default function LeetCodePieChart({
                 {mode.map((mode) => (
                     <ToggleButton key={mode} value={mode}
                         sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
                             backgroundColor: '#282828',
-                            color: 'white',
+                            color: questionColors[mode] || '#fff',
                             '&.Mui-selected': {
                                 backgroundColor: '#2845D6',
-                                color: '#F2D06A',
+                                // color: '#F2D06A',
                             },
                         }}>
                         {mode}
+                        <Typography variant="caption" sx={{ display: 'block', fontSize: 12, color: '#888' }}>
+                            {data.matchedUser.submitStats.acSubmissionNum.find(item => item.difficulty === mode)?.count || 0}/{data.allQuestionsCount.find(item => item.difficulty === mode)?.count || 0}
+                        </Typography>
                     </ToggleButton>
                 ))}
             </ToggleButtonGroup>

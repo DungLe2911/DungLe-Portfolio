@@ -338,7 +338,7 @@ const toolBox = [
 // -------------------------------------------- ABOUT PAGE-------------------------------------------------------
 const serviceList = [
     {
-        title: "Web Design",
+        title: "System Architecture Design",
         text: "Architecting high-performance systems using diverse design patterns for optimal functionality",
         icon: "design.svg",
     },
@@ -353,7 +353,7 @@ const serviceList = [
         icon: "server.svg",
     },
     {
-        title: "Machin Learning Engineer",
+        title: "Machine Learning Engineer",
         text: "Designing, training, and optimizing AI models to drive intelligent decision-making and automation",
         icon: "AI.svg",
     },

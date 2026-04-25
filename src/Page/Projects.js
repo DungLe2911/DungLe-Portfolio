@@ -77,6 +77,9 @@ export default function Project() {
                     <Box className="modalBox">
                         {selectedProject?.imageList?.[0] && (
                             <>
+                                <Typography id="modal-title" variant="h6" component="h2" sx={{ mt: 1, fontWeight: "bold" }}>
+                                    {selectedProject?.name}
+                                </Typography>
                                 <Carousel
                                     showArrows
                                     showIndicators
@@ -138,10 +141,6 @@ export default function Project() {
                             </>
                         )}
 
-                        <Typography id="modal-title" variant="h6" component="h2" sx={{ mt: 1 }}>
-                            {selectedProject?.name}
-                        </Typography>
-
                         <Typography sx={{ mt: 1, fontSize: 14, opacity: 0.8 }}>
                             {selectedProject?.company} - {selectedProject?.category}
                         </Typography>
@@ -177,7 +176,7 @@ export default function Project() {
                                     Live-Deployment:
                                 </Typography>
                                 <a href={selectedProject.deployedURL} target="_blank" rel="noopener noreferrer">
-                                    {selectedProject.deployedURL}
+                                    Link
                                 </a>
                             </Box>
                         )}
@@ -188,7 +187,7 @@ export default function Project() {
                                     Repository:
                                 </Typography>
                                 <a href={selectedProject.sourceCodeURL} target="_blank" rel="noopener noreferrer">
-                                    {selectedProject.sourceCodeURL}
+                                    Link
                                 </a>
                             </Box>
                         )}

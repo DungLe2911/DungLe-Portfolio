@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/DungLe-Portfolio/static/css/main.1a298496.css",
-    "main.js": "/DungLe-Portfolio/static/js/main.69814e85.js",
+    "main.css": "/DungLe-Portfolio/static/css/main.8b5f68f4.css",
+    "main.js": "/DungLe-Portfolio/static/js/main.c969127c.js",
     "static/media/portfolio1.png": "/DungLe-Portfolio/static/media/portfolio1.2c2ba9a1695d207cc951.png",
     "static/media/portfolio3.png": "/DungLe-Portfolio/static/media/portfolio3.c7f15816778dbf317fcb.png",
     "static/media/portfolio2.png": "/DungLe-Portfolio/static/media/portfolio2.9a458a9608e9bd71a5a5.png",
@@ -78,11 +78,11 @@
     "static/media/quote.svg": "/DungLe-Portfolio/static/media/quote.478aa3c6ff76bfa1cc652270d25603cb.svg",
     "static/media/Leetcode.svg": "/DungLe-Portfolio/static/media/Leetcode.006052f720389e44275dd8952f5f325a.svg",
     "index.html": "/DungLe-Portfolio/index.html",
-    "main.1a298496.css.map": "/DungLe-Portfolio/static/css/main.1a298496.css.map",
-    "main.69814e85.js.map": "/DungLe-Portfolio/static/js/main.69814e85.js.map"
+    "main.8b5f68f4.css.map": "/DungLe-Portfolio/static/css/main.8b5f68f4.css.map",
+    "main.c969127c.js.map": "/DungLe-Portfolio/static/js/main.c969127c.js.map"
   },
   "entrypoints": [
-    "static/css/main.1a298496.css",
-    "static/js/main.69814e85.js"
+    "static/css/main.8b5f68f4.css",
+    "static/js/main.c969127c.js"
   ]
 }

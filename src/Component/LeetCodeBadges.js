@@ -137,7 +137,7 @@ export default function LeetCodeBadges({ data = null }) {
     if (!data) return null;
 
     const badges = data.matchedUser?.badges ?? [];
-    const mostRecentBadge = badges[badges.length - 1] ?? null;
+    const mostRecentBadge = badges[0] ?? null;
     const isMobile = windowWidth <= 560;
 
     return (
@@ -257,8 +257,8 @@ function BadgeItem({ badge, isRecent = false }) {
                 lineHeight: 1.3,
                 maxWidth: 68,
                 overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap',
+                // textOverflow: 'ellipsis',
+                // whiteSpace: 'nowrap',
                 transition: 'transform 0.2s ease',
                 display: 'inline-block',
                 transform: hovered ? 'scale(1.2)' : 'scale(1)',

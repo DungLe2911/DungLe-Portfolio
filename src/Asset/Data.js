@@ -40,6 +40,12 @@ import findbud6 from '../Asset/Projects/FinBud AI/finbud6.jpg';
 import findbud7 from '../Asset/Projects/FinBud AI/finbud7.jpg';
 import findbud8 from '../Asset/Projects/FinBud AI/finbud8.png';
 
+import experience1 from './Resume/South Georgia Pecan.png';
+import experience2 from './Resume/BeaconFire.png';
+import experience3 from './Resume/WSU.png';
+import experience4 from './Resume/F5.png';
+import experience5 from './Resume/SVB.png';
+
 // -------------------------------------------- NAV BAR-------------------------------------------------------
 const contactsList = [
     {
@@ -111,6 +117,7 @@ const educationList = [
 
 const experienceList = [
     {
+        logo1: experience1,
         company: "South Georgia Pecan Co.",
         time: "June 2025 - Present",
         title: "Full Stack Software Engineer",
@@ -124,6 +131,7 @@ const experienceList = [
         ]
     },
     {
+        logo1: experience1,
         company: "South Georgia Pecan Co.",
         time: "Dec 2022 - June 2025",
         title: "Data Engineer",
@@ -135,7 +143,9 @@ const experienceList = [
             "Built forecasting dashboard using cleaned historical data to predict production trends and raw material needs, improving planning accuracy and reducing overstock by [15%]."
         ]
     },
-    {
+    {   
+        logo1: experience5,
+        logo2: experience2,
         company: "Silicon Valley Bank via Beaconfire",
         time: "Feb 2022 - Dec 2022",
         title: "Software Developer Engineer",
@@ -148,6 +158,8 @@ const experienceList = [
         ]
     },
     {
+        logo1: experience4,
+        logo2: experience3,
         company: "F5 Network Internship",
         time: "Jan 2021 - Dec 2021",
         title: "Front End Developer",
@@ -161,6 +173,7 @@ const experienceList = [
         ]
     },
     {
+        logo1: experience3,
         company: "Washington State University - HiPDAC Reseach Group ",
         time: "Jan 2021 - Jan 2022",
         title: "Research Assistant",
@@ -172,6 +185,7 @@ const experienceList = [
         ]
     },
     {
+        logo1: experience3,
         company: "Washington State University",
         time: "Aug 2021 - Dec 2021",
         title: "Undergrate Teaching Assistant",

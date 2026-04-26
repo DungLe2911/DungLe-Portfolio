@@ -15,6 +15,16 @@
     padding-bottom: 7px;
 }
 
+.experienceLogo {
+    max-width: 120px;
+    max-height: 60px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 8px 0;
+}
+
 .articleTitle::after {
     content: "";
     position: absolute;

@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import DownloadBtn from "../Component/DownloadBtn.js";
 import { ReactComponent as LeetcodeIcon } from "../Asset/Resume/Leetcode.svg";
 import LeetCodePieChart from "../Component/LeetCodePieChart.js";
-import { Box, Button, Fade } from "@mui/material";
+import { Box, Button, Fade, Typography } from "@mui/material";
 import ContributionHeatMap from "../Component/ContributionHeatMap.js";
 import { fetchUserProfile } from "../Utility/Request.js";
 import LeetCodeBadges from "../Component/LeetCodeBadges.js";
@@ -137,6 +137,31 @@ export default function Resume() {
                                     <h4 className="h4 timelineItemTitle">
                                         {experience.title}
                                     </h4>
+                                    {experience.logo1 ?
+                                        <Box sx={{
+                                            display: 'flex',
+                                            gap: '12px',
+                                            flexWrap: 'wrap',
+                                        }}>
+                                            <img
+                                                src={experience.logo1}
+                                                alt={experience.company}
+                                                className="experienceLogo"
+                                            />
+                                            {experience.logo2 && (
+                                                <>
+                                                <Typography variant="h5" component="span" sx={{ color: 'white', fontWeight: 700, alignSelf: 'center' }}>
+                                                    X
+                                                </Typography>
+                                                    <img
+                                                        src={experience.logo2}
+                                                        alt={experience.company}
+                                                        className="experienceLogo"
+                                                    />
+                                                </>
+                                            )}
+                                        </Box>
+                                        : null}
                                     <h5 className="h5 timelineText" style={{ fontWeight: 700 }}>
                                         {experience.company}
                                     </h5>
@@ -170,21 +195,23 @@ export default function Resume() {
                 </Box>
             </section>
 
-            {leetcodeProfile && (
-                <section className="timeline">
-                    <div className="titleWrapper">
-                        <div className="iconBox">
-                            <LeetcodeIcon
-                                className="w-6 h-6 text-[rgb(255,219,112)]"
-                            />
+            {
+                leetcodeProfile && (
+                    <section className="timeline">
+                        <div className="titleWrapper">
+                            <div className="iconBox">
+                                <LeetcodeIcon
+                                    className="w-6 h-6 text-[rgb(255,219,112)]"
+                                />
+                            </div>
+                            <h3 className="h3"> Leetcode</h3>
                         </div>
-                        <h3 className="h3"> Leetcode</h3>
-                    </div>
-                    <LeetCodePieChart data={leetcodeProfile} windowWidth={width} className={`rounded-md h-${width <= 425 ? 90 : 72}`} />
-                    <ContributionHeatMap data={JSON.parse(leetcodeProfile.matchedUser.submissionCalendar)} windowWidth={width}/>
-                    <LeetCodeBadges data={leetcodeProfile} />
-                </section>
-            )}
+                        <LeetCodePieChart data={leetcodeProfile} windowWidth={width} className={`rounded-md h-${width <= 425 ? 90 : 72}`} />
+                        <ContributionHeatMap data={JSON.parse(leetcodeProfile.matchedUser.submissionCalendar)} windowWidth={width} />
+                        <LeetCodeBadges data={leetcodeProfile} />
+                    </section>
+                )
+            }
 
             <section className="timeline">
                 <div className="titleWrapper">

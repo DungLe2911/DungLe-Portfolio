@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/DungLe-Portfolio/static/css/main.bb96a480.css",
-    "main.js": "/DungLe-Portfolio/static/js/main.c597c789.js",
+    "main.js": "/DungLe-Portfolio/static/js/main.42fb5211.js",
     "static/media/portfolio1.png": "/DungLe-Portfolio/static/media/portfolio1.2c2ba9a1695d207cc951.png",
     "static/media/portfolio3.png": "/DungLe-Portfolio/static/media/portfolio3.c7f15816778dbf317fcb.png",
     "static/media/portfolio2.png": "/DungLe-Portfolio/static/media/portfolio2.9a458a9608e9bd71a5a5.png",
@@ -11,6 +11,7 @@
     "static/media/portfolio4.png": "/DungLe-Portfolio/static/media/portfolio4.2f2c77607c57da3f6522.png",
     "static/media/birdie1.png": "/DungLe-Portfolio/static/media/birdie1.77befc20d115995286af.png",
     "static/media/finbud5.jpg": "/DungLe-Portfolio/static/media/finbud5.7a9bce1dd29679eb9f58.jpg",
+    "static/media/Dung_Le_Resume.pdf": "/DungLe-Portfolio/static/media/Dung_Le_Resume.a668d50f72fb14709ea8.pdf",
     "static/media/Completed and Mapped Form Example 2.png": "/DungLe-Portfolio/static/media/Completed and Mapped Form Example 2.1113b1b1f92defaad3ce.png",
     "static/media/MachineAreaSetting.png": "/DungLe-Portfolio/static/media/MachineAreaSetting.9ecc6bd384633a6c3fdb.png",
     "static/media/finbud2.png": "/DungLe-Portfolio/static/media/finbud2.b07c1a291eaecf10f098.png",
@@ -84,10 +85,10 @@
     "static/media/Leetcode.svg": "/DungLe-Portfolio/static/media/Leetcode.006052f720389e44275dd8952f5f325a.svg",
     "index.html": "/DungLe-Portfolio/index.html",
     "main.bb96a480.css.map": "/DungLe-Portfolio/static/css/main.bb96a480.css.map",
-    "main.c597c789.js.map": "/DungLe-Portfolio/static/js/main.c597c789.js.map"
+    "main.42fb5211.js.map": "/DungLe-Portfolio/static/js/main.42fb5211.js.map"
   },
   "entrypoints": [
     "static/css/main.bb96a480.css",
-    "static/js/main.c597c789.js"
+    "static/js/main.42fb5211.js"
   ]
 }

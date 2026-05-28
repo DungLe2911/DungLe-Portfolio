@@ -112,6 +112,12 @@ const educationList = [
         school: "Washington State University",
         degree: "Bachelor of Science in Computer Science",
         GPA: 3.6
+    },
+    {
+        period: "2015 - 2019",
+        school: "Tacoma Community College",
+        degree: "Associate of Science in Computer Science",
+        GPA: 3.4
     }
 ]
 
@@ -122,12 +128,12 @@ const experienceList = [
         time: "June 2025 - Present",
         title: "Full Stack Software Engineer",
         bulletPoints: [
-            "Replaced [85%] of physical Control Document process with a digitalized system, which helps reduce information filling by [30%]",
-            "Built a user-friendly front-end for [over 250 employees] using [React] and [Material-UI library], mirroring physical paper forms to ensure a smooth transition to the digital process.",
-            "Created a backend server with [Spring Boot] and validation rules that matches an existing factory-floor workflow production to capture user’s submission for high data accuracy and audit readiness.",
-            "Developed [Microsoft SQL Server] database to store digital form submissions, application settings, and [RBAC resources].",
-            "Integrated the app with a [dashboard] that allows management team to generate real-time [trend analysis] on production such as defects, customers, machines, and lines via [Power BI].",
-            "Optimized QC reporting and analytics which strengthen product traceability and help boost decision-making speed by [20%]."
+            "• Replaced [85%] of physical Control Document process with a digitalized system, which helps reduce information filling by [30%]",
+            "• Built a user-friendly front-end for [over 250 employees] using [React] and [Material-UI library], mirroring physical paper forms to ensure a smooth transition to the digital process.",
+            "• Created a backend server with [Spring Boot] and validation rules that matches an existing factory-floor workflow production to capture user’s submission for high data accuracy and audit readiness.",
+            "• Developed [Microsoft SQL Server] database to store digital form submissions, application settings, and [RBAC resources].",
+            "• Integrated the app with a [dashboard] that allows management team to generate real-time [trend analysis] on production such as defects, customers, machines, and lines via [Power BI].",
+            "• Optimized QC reporting and analytics which strengthen product traceability and help boost decision-making speed by [20%]."
         ]
     },
     {
@@ -136,11 +142,11 @@ const experienceList = [
         time: "Dec 2022 - June 2025",
         title: "Data Engineer",
         bulletPoints: [
-            "Developed [data visualization tools] using [Power BI] and [Excel] for production monitoring and goal tracking",
-            "Implemented [SQL queries] to clean up data on [Microsoft SQL Server] and pull data for daily updates",
-            "Performed end-to-end traceability on finished product back to the initial process input with the full ingredient usage.",
-            "Automated and optimized data pipelines using [Python] and [SQL procedures], reducing daily correction time from average of [2-3 hours] down to [around 20 minutes], enabling goal tracking and same-day decision making.",
-            "Built forecasting dashboard using cleaned historical data to predict production trends and raw material needs, improving planning accuracy and reducing overstock by [15%]."
+            "• Developed [data visualization tools] using [Power BI] and [Excel] for production monitoring and goal tracking",
+            "• Implemented [SQL queries] to clean up data on [Microsoft SQL Server] and pull data for daily updates",
+            "• Performed end-to-end traceability on finished product back to the initial process input with the full ingredient usage.",
+            "• Automated and optimized data pipelines using [Python] and [SQL procedures], reducing daily correction time from average of [2-3 hours] down to [around 20 minutes], enabling goal tracking and same-day decision making.",
+            "• Built forecasting dashboard using cleaned historical data to predict production trends and raw material needs, improving planning accuracy and reducing overstock by [15%]."
         ]
     },
     {   
@@ -150,50 +156,50 @@ const experienceList = [
         time: "Feb 2022 - Dec 2022",
         title: "Software Developer Engineer",
         bulletPoints: [
-            "Designed a backend server with [microservices architecture] using [java], [Spring Boot] following [RESTful API] guidelines",
-            "Utilized [Hibernate] to generate SQL queries for [MySQL] database interactions, improving development efficiency, and reducing the need of manually creating SQL queries.",
-            "Achieved [internal] [microservices] [communication] with [Feign Client] for synchronous calls, and [Kafka] for event – driven workflow",
-            "Deployed and managed the application on [AWS] utilizing various of difference services [Dynamo RDS], [SQS], [Secret Manager], and [additional services], while enforcing access control between the services via [IAM] roles and policies.",
-            "Maintained the code using [GitLab] and set up [CI/CD] pipeline to dev/preprod/QA deployment on [AWS Code Deploy]."
-        ]
-    },
-    {
-        logo1: experience4,
-        logo2: experience3,
-        company: "F5 Network Internship",
-        time: "Jan 2021 - Dec 2021",
-        title: "Front End Developer",
-        bulletPoints: [
-            "Responsible for the frontend part of the project by using [ReactJS] Framework with functional component.",
-            "Utilized Axios libraries for retrieving data and send request between frontend and backend application.",
-            "Integrated the frontend application with a terminal that runs in a [Kubernetes] cluster.",
-            "Tested the interaction between the elements by using [TestCafe] Framework for unit testing.",
-            "Collaborated with the team members on the project through [GitHub].",
-            "Responsible for the deploying process of the frontend application through [Heroku] Platform.",
+            "• Designed a backend server with [microservices architecture] using [java], [Spring Boot] following [RESTful API] guidelines",
+            "• Utilized [Hibernate] to generate SQL queries for [MySQL] database interactions, improving development efficiency, and reducing the need of manually creating SQL queries.",
+            "• Achieved [internal] [microservices] [communication] with [Feign Client] for synchronous calls, and [Kafka] for event – driven workflow",
+            "• Deployed and managed the application on [AWS] utilizing various of difference services [Dynamo RDS], [SQS], [Secret Manager], and [additional services], while enforcing access control between the services via [IAM] roles and policies.",
+            "• Maintained the code using [GitLab] and set up [CI/CD] pipeline to dev/preprod/QA deployment on [AWS Code Deploy]."
         ]
     },
     {
         logo1: experience3,
-        company: "Washington State University - HiPDAC Reseach Group ",
-        time: "Jan 2021 - Jan 2022",
-        title: "Research Assistant",
+        logo2: experience4,
+        company: "Washington State University",
+        time: "Jan 2021 - Dec 2021",
+        title: "Front End Developer - F5 Network Internship",
         bulletPoints: [
-            "[Benchmarked different CNN] models under different environment settings",
-            "Performed matrix multiplication using already existed library such as [OpenBLAS], [BLIS], [SpGeMM]",
-            "Analyzed the result for optimization based on inference time, memory usage",
-            "Implemented additional [C/C++] code that helps with generating new matrices for the benchmarking the CNN models",
+            "• Responsible for the frontend part of the project by using [ReactJS] Framework with functional component.",
+            "• Utilized Axios libraries for retrieving data and send request between frontend and backend application.",
+            "• Integrated the frontend application with a terminal that runs in a [Kubernetes] cluster.",
+            "• Tested the interaction between the elements by using [TestCafe] Framework for unit testing.",
+            "• Collaborated with the team members on the project through [GitHub].",
+            "• Responsible for the deploying process of the frontend application through [Heroku] Platform.",
+        ]
+    },
+    {
+        logo1: experience3,
+        company: "Washington State University",
+        time: "Jan 2021 - Jan 2022",
+        title: "Research Assistant - HiPDAC Research Group",
+        bulletPoints: [
+            "• Benchmarked different CNN models under different environment settings",
+            "• Performed matrix multiplication using already existed library such as [OpenBLAS], [BLIS], [SpGeMM]",
+            "• Analyzed the result for optimization based on inference time, memory usage",
+            "• Implemented additional [C/C++] code that helps with generating new matrices for the benchmarking the CNN models",
         ]
     },
     {
         logo1: experience3,
         company: "Washington State University",
         time: "Aug 2021 - Dec 2021",
-        title: "Undergrate Teaching Assistant",
+        title: "Undergraduate Teaching Assistant",
         bulletPoints: [
-            "[Mentored around 17 students] for a college semester",
-            "[Supervised over 200 students] practical labs and exams for a college semester",
-            "Provided feedback and guidance for each lab section and lecture misunderstanding for students",
-            "Helped explain lecture concepts and materials to students that have a hard time understanding",
+            "• Mentored around 17 students for a college semester",
+            "• Supervised over 200 students practical labs and exams for a college semester",
+            "• Provided feedback and guidance for each lab section and lecture misunderstanding for students",
+            "• Helped explain lecture concepts and materials to students that have a hard time understanding",
         ]
     },
 ]

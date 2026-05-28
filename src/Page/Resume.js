@@ -11,6 +11,7 @@ import { Box, Button, Fade, Typography } from "@mui/material";
 import ContributionHeatMap from "../Component/ContributionHeatMap.js";
 import { fetchUserProfile } from "../Utility/Request.js";
 import LeetCodeBadges from "../Component/LeetCodeBadges.js";
+import ExperienceSection from "../Component/ExperienceTimeline.js";
 
 export default function Resume() {
     const [width, setWidth] = useState(window.innerWidth);
@@ -117,7 +118,8 @@ export default function Resume() {
                 </ol>
             </section>
 
-            <section className="timeline">
+            {/* DEPRECATED */}
+            {/* <section className="timeline">
                 <div className="titleWrapper">
                     <div className="iconBox">
                         <FontAwesomeIcon icon={FaSolid.faBriefcase} />
@@ -193,7 +195,8 @@ export default function Resume() {
                         {showAmount >= experienceList.length ? "Show Less" : "Show More"}
                     </Button>
                 </Box>
-            </section>
+            </section> */}
+            <ExperienceSection experienceList={experienceList} />
 
             {
                 leetcodeProfile && (

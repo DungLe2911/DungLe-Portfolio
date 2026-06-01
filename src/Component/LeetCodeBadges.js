@@ -191,8 +191,7 @@ export default function LeetCodeBadges({ data = null }) {
 
 function BadgeItem({ badge, isRecent = false }) {
     const [hovered, setHovered] = useState(false);
-    const imgSrc = badge.icon ?? badge.iconGif ?? null;
-
+    const imgSrc = badge.icon.startsWith('http') ? badge.icon : `https://leetcode.com${badge.icon}`;
     return (
         <div
             onMouseEnter={() => setHovered(true)}

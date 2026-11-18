@@ -21,8 +21,8 @@ import { Style, Icon } from "ol/style";
 
 export default function Contact() {
     const position = {
-        lat: 30.832,
-        lng: -83.279
+        lat: 47.482880,
+        lng: -122.217064
     }
     const mapContainerRef = useRef(null);
     const mapRef = useRef(null);

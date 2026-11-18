@@ -45,6 +45,7 @@ import experience2 from './Resume/BeaconFire.png';
 import experience3 from './Resume/WSU.png';
 import experience4 from './Resume/F5.png';
 import experience5 from './Resume/SVB.png';
+import experience6 from './Resume/Amoeba.png';
 
 // -------------------------------------------- NAV BAR-------------------------------------------------------
 const contactsList = [
@@ -69,7 +70,7 @@ const contactsList = [
     {
         icon: "faLocationDot",
         title: "LOCATION",
-        content: "VALDOSTA, GEORGIA, USA",
+        content: "RENTON, WASHINGTON, USA",
         type: "text"
     }
 ]
@@ -123,9 +124,22 @@ const educationList = [
 
 const experienceList = [
     {
+        logo1: experience6,
+        company: "Amoeba Software",
+        time: "June 2026 - Present",
+        title: "Full Stack Software Engineer",
+        bulletPoints: [
+            "• Re-architected file uploads onto a presigned-URL pipeline using [FastAPI], [S3], [SQS], [Celery] with [AWS GuardDuty] malware scanning and [SSE] status streaming, covering [95%] of uploaded files.",
+            "• Built a bulk-creation tool that lets engineers generate an entire vehicle's worth of parts in one action instead of building them one at a time, cutting a multi-hour manual process down to under 10 minutes per vehicle build",
+            "• Built part version history in MongoDB, snapshotting modifier, related parts, child components, images, and 2D symbols on each major update for a full audit trail allowing user rollback upon any modification failure",
+            "• Built a multilingual [OCR pipeline] with [LlamaParse], and [Tesseract] that extracts related parts from part documents, cutting perpart research time by [80%] and feeding results directly into part creation",
+            "• Built and maintain a dual database platform with [Neptune] and [Mongo] managing [100,000+] electrical components and delivering harness library data to automotive and aerospace clients via [Siemens Capital]"
+        ]
+    },
+    {
         logo1: experience1,
         company: "South Georgia Pecan Co.",
-        time: "June 2025 - Present",
+        time: "June 2025 - June 2026",
         title: "Full Stack Software Engineer",
         bulletPoints: [
             "• Replaced [85%] of physical Control Document process with a digitalized system, which helps reduce information filling by [30%]",
@@ -206,11 +220,6 @@ const experienceList = [
 
 const toolBox = [
     {
-        name: "GitHub",
-        iconPath: "GitHub.png",
-        category: 'tools'
-    },
-    {
         name: "HTML",
         iconPath: "HTML.png",
         category: 'Frontend'
@@ -224,16 +233,6 @@ const toolBox = [
         name: "Javascript",
         iconPath: "JS.png",
         category: 'Frontend'
-    },
-    {
-        name: "NodeJS",
-        iconPath: "NodeJS.png",
-        category: 'Backend'
-    },
-    {
-        name: "SpringBoot",
-        iconPath: "SpringBoot.png",
-        category: 'Backend'
     },
     {
         name: "ReactJS",
@@ -251,21 +250,6 @@ const toolBox = [
         category: 'Frontend'
     },
     {
-        name: "Heroku",
-        iconPath: "Heroku.png",
-        category: 'Frontend'
-    },
-    {
-        name: "Vercel",
-        iconPath: "Vercel.png",
-        category: 'Frontend'
-    },
-    {
-        name: "Netlify",
-        iconPath: "Netlify.png",
-        category: 'Frontend'
-    },
-    {
         name: "MUI",
         iconPath: "MUI.png",
         category: 'Frontend'
@@ -276,18 +260,13 @@ const toolBox = [
         category: 'Frontend'
     },
     {
-        name: "MySQL",
-        iconPath: "MySQL.png",
+        name: "NodeJS",
+        iconPath: "NodeJS.png",
         category: 'Backend'
     },
     {
-        name: "MongoDB",
-        iconPath: "MongoDB.png",
-        category: 'Backend'
-    },
-    {
-        name: "Microsoft SQL",
-        iconPath: "MS SQL.png",
+        name: "SpringBoot",
+        iconPath: "SpringBoot.png",
         category: 'Backend'
     },
     {
@@ -296,9 +275,9 @@ const toolBox = [
         category: 'Backend'
     },
     {
-        name: "AWS",
-        iconPath: "AWS.png",
-        category: 'Cloud'
+        name: "Kafka",
+        iconPath: "Kafka.png",
+        category: 'Backend'
     },
     {
         name: "RabbitMQ",
@@ -306,9 +285,49 @@ const toolBox = [
         category: 'Backend'
     },
     {
-        name: "Kafka",
-        iconPath: "Kafka.png",
+        name: "JWT",
+        iconPath: "JWT.png",
         category: 'Backend'
+    },
+    {
+        name: "OAuth",
+        iconPath: "OAuth.png",
+        category: 'Backend'
+    },
+    {
+        name: "MySQL",
+        iconPath: "MySQL.png",
+        category: 'Databases'
+    },
+    {
+        name: "MongoDB",
+        iconPath: "MongoDB.png",
+        category: 'Databases'
+    },
+    {
+        name: "Microsoft SQL",
+        iconPath: "MS SQL.png",
+        category: 'Databases'
+    },
+    {
+        name: "AWS",
+        iconPath: "AWS.png",
+        category: 'Cloud'
+    },
+    {
+        name: "Heroku",
+        iconPath: "Heroku.png",
+        category: 'Cloud'
+    },
+    {
+        name: "Vercel",
+        iconPath: "Vercel.png",
+        category: 'Cloud'
+    },
+    {
+        name: "Netlify",
+        iconPath: "Netlify.png",
+        category: 'Cloud'
     },
     {
         name: "GitHub",
@@ -316,8 +335,8 @@ const toolBox = [
         category: 'Tool'
     },
     {
-        name: "Kubernetes",
-        iconPath: "Kubernetes.png",
+        name: "GitLab",
+        iconPath: "GitLab.png",
         category: 'Tool'
     },
     {
@@ -326,8 +345,8 @@ const toolBox = [
         category: 'Tool'
     },
     {
-        name: "Postman",
-        iconPath: "Postman.png",
+        name: "Kubernetes",
+        iconPath: "Kubernetes.png",
         category: 'Tool'
     },
     {
@@ -336,23 +355,10 @@ const toolBox = [
         category: 'Tool'
     },
     {
-        name: "OAuth",
-        iconPath: "OAuth.png",
-        category: 'Backend'
-    },
-    {
-        name: "GitLab",
-        iconPath: "GitLab.png",
+        name: "Postman",
+        iconPath: "Postman.png",
         category: 'Tool'
     },
-    {
-        name: "JWT",
-        iconPath: "JWT.png",
-        category: 'Backend'
-    },
-
-
-
 ]
 
 // -------------------------------------------- ABOUT PAGE-------------------------------------------------------

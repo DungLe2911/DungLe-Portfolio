@@ -13,6 +13,32 @@ import { fetchUserProfile } from "../Utility/Request.js";
 import LeetCodeBadges from "../Component/LeetCodeBadges.js";
 import ExperienceSection from "../Component/ExperienceTimeline.js";
 
+const toolGroups = [
+    { title: "Frontend", category: "Frontend" },
+    { title: "Backend", category: "Backend" },
+    { title: "Databases", category: "Databases", wide: true },
+    { title: "Cloud", category: "Cloud" },
+    { title: "Tools", category: "Tool" },
+];
+
+function ToolCard({ title, tools, wide }) {
+    return (
+        <article className={`toolCard${wide ? " toolCardWide" : ""}`}>
+            <h4 className="toolCardTitle">{title}</h4>
+            <ul className="toolBoxList">
+                {tools.map((tool) => (
+                    <li key={tool.name} className="toolBoxItem">
+                        <div className="toolImageContainer">
+                            <img src={require(`../Asset/Resume/${tool.iconPath}`)} alt={tool.name} />
+                            <div className="toolName">{tool.name}</div>
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        </article>
+    );
+}
+
 export default function Resume() {
     const [width, setWidth] = useState(window.innerWidth);
     const [leetcodeProfile, setLeetcodeProfile] = useState(null);
@@ -223,100 +249,16 @@ export default function Resume() {
                     </div>
                     <h3 className="h3">Tools Box</h3>
                 </div>
-                {width >= 1024 ? <div>
-                    <div className="toolSectionContainer">
-                        <div className="h3 sectionTitle">
-                            Frontend
-                        </div>
-                        <ul className="toolBoxList">
-                            {toolBox.filter(item => item.category === 'Frontend').map((tool, index) => {
-                                return (
-                                    <li key={index} className="toolBoxItem">
-                                        <div className="toolImageContainer">
-                                            <img src={require(`../Asset/Resume/${tool.iconPath}`)} alt={tool.name}></img>
-                                            <div className="toolName">{tool.name}</div>
-                                        </div>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    </div>
-                    <div className="toolSectionContainer">
-                        <div className="h3 sectionTitle">
-                            Backend
-                        </div>
-                        <ul className="toolBoxList">
-                            {toolBox.filter(item => item.category === 'Backend').map((tool, index) => {
-                                return (
-                                    <li key={index} className="toolBoxItem">
-                                        <div className="toolImageContainer">
-                                            <img src={require(`../Asset/Resume/${tool.iconPath}`)} alt={tool.name}></img>
-                                            <div className="toolName">{tool.name}</div>
-                                        </div>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    </div>
-                    <div className="toolSectionContainer">
-                        <div className="h3 sectionTitle">
-                            Cloud
-                        </div>
-                        <ul className="toolBoxList">
-                            {toolBox.filter(item => item.category === 'Cloud').map((tool, index) => {
-                                return (
-                                    <li key={index} className="toolBoxItem">
-                                        <div className="toolImageContainer">
-                                            <img src={require(`../Asset/Resume/${tool.iconPath}`)} alt={tool.name}></img>
-                                            <div className="toolName">{tool.name}</div>
-                                        </div>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    </div>
-                    <div className="toolSectionContainer">
-                        <div className="h3 sectionTitle">
-                            Tools
-                        </div>
-                        <ul className="toolBoxList">
-                            {toolBox.filter(item => item.category === 'Tool').map((tool, index) => {
-                                return (
-                                    <li key={index} className="toolBoxItem">
-                                        <div className="toolImageContainer">
-                                            <img src={require(`../Asset/Resume/${tool.iconPath}`)} alt={tool.name}></img>
-                                            <div className="toolName">{tool.name}</div>
-                                        </div>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    </div>
-                </div> :
-                    <div className="carousel">
-                        <div className="track">
-                            {toolBox.map((tool, index) => {
-                                return (
-                                    <li key={index} className="toolBoxItem">
-                                        <div className="toolImageContainer">
-                                            <img src={require(`../Asset/Resume/${tool.iconPath}`)} alt={tool.name}></img>
-                                            <div className="toolName">{tool.name}</div>
-                                        </div>
-                                    </li>
-                                )
-                            })}
-                            {toolBox.map((tool, index) => {
-                                return (
-                                    <li key={index} className="toolBoxItem">
-                                        <div className="toolImageContainer">
-                                            <img src={require(`../Asset/Resume/${tool.iconPath}`)} alt={tool.name}></img>
-                                            <div className="toolName">{tool.name}</div>
-                                        </div>
-                                    </li>
-                                )
-                            })}
-                        </div>
-                    </div>}
+                <div className="toolsBoard">
+                    {toolGroups.map((group) => (
+                        <ToolCard
+                            key={group.title}
+                            title={group.title}
+                            wide={group.wide}
+                            tools={toolBox.filter((item) => item.category === group.category)}
+                        />
+                    ))}
+                </div>
             </section>
         </div>
     )
